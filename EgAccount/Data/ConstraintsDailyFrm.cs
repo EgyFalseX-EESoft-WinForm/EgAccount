@@ -16,9 +16,31 @@ namespace EgAccount
         DataTable ConsDetials = new DataTable("FalseX");
         DataTable ConsDelDetials = new DataTable("FalseX");
         DataTable ConsTbl = new DataTable("ConsTable");
+        Datasource.dsQryTableAdapters.QueriesTableAdapter adpQ = new Datasource.dsQryTableAdapters.QueriesTableAdapter();
         public ConstraintsDailyFrm()
         {
             InitializeComponent();
+            ClearForm();
+        }
+        private void ClearForm()
+        {
+            LUEYear.EditValue = null;
+            TxtGeneralConstraintNo.EditValue = adpQ.NewKIEDNO();
+            TxtGeneralBillNumber.EditValue = TxtGeneralConstraintNo.EditValue;
+            DEDate.EditValue = adpQ.ServerDatetime();
+            MemoTxtGeneralDes.EditValue = string.Empty;
+            CBRelay.Checked = false;
+
+            TxtConsValue.EditValue = 0;
+            TxtBillNumber.EditValue = string.Empty;
+            MemoTxtDes.EditValue = string.Empty;
+
+            ConsDetials.Rows.Clear();
+            GCDetials.DataSource = ConsDetials;
+            GroupControlDetials.Enabled = false;
+            GroupControlAdding.Enabled = false;
+            GCGeneralCons.Enabled = true;
+
         }
         private void ConstraintsDailyFrm_Load(object sender, EventArgs e)
         {
@@ -159,7 +181,7 @@ namespace EgAccount
                         trhel = "1";
                     else
                         trhel = "0";
-                    Cmd.CommandText = "Set Dateformat dmy INSERT INTO TBLTRANSACTION  (TRANSID, YearID, KIEDNO, KIEDDAFTRYNO, KIEDDATE, KIEDDESC, trhel) VALUES (" + TRANSID + ", " + YearID + ", " + KIEDNO + ", " + KIEDDAFTRYNO + ", " + KIEDDATE + ", " + KIEDDESC + ", " + trhel + ")";
+                    Cmd.CommandText = "Set Dateformat dmy INSERT INTO TBLTRANSACTION  (TRANSID, YearID, KIEDNO, KIEDDAFTRYNO, KIEDDATE, KIEDDESC, trhel, datein, userin) VALUES (" + TRANSID + ", " + YearID + ", " + KIEDNO + ", " + KIEDDAFTRYNO + ", " + KIEDDATE + ", " + KIEDDESC + ", " + trhel + ", GETDATE(), " + MCls.UserInfo.UserID + ")";
                     Cmd.ExecuteNonQuery();
                 }
                 else
@@ -179,16 +201,13 @@ namespace EgAccount
                         MostandNo = "N'" + row["MostandNo"].ToString() + "'";
                     if ((string)row["kieddes"] != string.Empty)
                         kieddes = "N'" + row["kieddes"].ToString() + "'";
-                    Cmd.CommandText = "Set Dateformat dmy INSERT INTO TBLTRAANSDETAILS (TRANSID, TNO, AccountId, Madeen, Daien, MostandNo, kieddes) VALUES (" + TRANSID + ", " + TNO + ", " + AccountId + ", " + Madeen + ", " + Daien + ", " + MostandNo + ", " + kieddes + ")";
+                    Cmd.CommandText = "Set Dateformat dmy INSERT INTO TBLTRAANSDETAILS (TRANSID, TNO, AccountId, Madeen, Daien, MostandNo, kieddes, datein, userin) VALUES (" + TRANSID + ", " + TNO + ", " + AccountId + ", " + Madeen + ", " + Daien + ", " + MostandNo + ", " + kieddes + ", GETDATE(), " + MCls.UserInfo.UserID + ")";
                     Cmd.ExecuteNonQuery();
                 }
                 Trn.Commit();
                 MessageBox.Show("تم حفـــظ القيــد", "تمت العمليه", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ConsDetials.Rows.Clear();
-                GCDetials.DataSource = ConsDetials;
-                GroupControlDetials.Enabled = false;
-                GroupControlAdding.Enabled = false;
-                GCGeneralCons.Enabled = true;
+                
+                ClearForm();
                 LUEYear.Focus();
             }
             catch (SqlException ex)
@@ -198,13 +217,14 @@ namespace EgAccount
             }
             Con.Close();
         }
+        
         private void gridView1_RowCountChanged(object sender, EventArgs e)
         {
             CalcCons();
         }
         private void LUEDelCons_EditValueChanged(object sender, EventArgs e)
         {
-            if (LUEDelCons.ItemIndex != -1)
+            if (LUEDelCons.EditValue != null || LUEDelCons.EditValue.ToString() != string.Empty)
             {
                 BtnDelCon.Enabled = true;
                 //Load Contains

@@ -83,12 +83,19 @@
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.BtnDelCon = new DevExpress.XtraEditors.SimpleButton();
-            this.LUEDelCons = new DevExpress.XtraEditors.LookUpEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.LUEDelCons = new DevExpress.XtraEditors.GridLookUpEdit();
+            this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GCGeneralCons)).BeginInit();
             this.GCGeneralCons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MemoTxtGeneralDes.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DEDate.Properties.VistaTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DEDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DEDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtGeneralBillNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtGeneralConstraintNo.Properties)).BeginInit();
@@ -117,6 +124,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEDelCons.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
             this.SuspendLayout();
             // 
             // GCGeneralCons
@@ -158,7 +166,7 @@
             this.MemoTxtGeneralDes.Name = "MemoTxtGeneralDes";
             this.MemoTxtGeneralDes.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.MemoTxtGeneralDes.Size = new System.Drawing.Size(200, 19);
+            this.MemoTxtGeneralDes.Size = new System.Drawing.Size(200, 20);
             this.MemoTxtGeneralDes.TabIndex = 4;
             // 
             // BtnDetails
@@ -177,15 +185,15 @@
             this.DEDate.Name = "DEDate";
             this.DEDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DEDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton()});
             this.DEDate.Properties.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.DEDate.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.DEDate.Properties.EditFormat.FormatString = "dd/MM/yyyy";
             this.DEDate.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.DEDate.Properties.Mask.EditMask = "dd/MM/yyyy";
             this.DEDate.Properties.NullValuePrompt = "ادخل تاريخ القيد";
-            this.DEDate.Properties.VistaTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.DEDate.Size = new System.Drawing.Size(200, 19);
+            this.DEDate.Size = new System.Drawing.Size(200, 20);
             this.DEDate.TabIndex = 3;
             // 
             // TxtGeneralBillNumber
@@ -193,7 +201,7 @@
             this.TxtGeneralBillNumber.Location = new System.Drawing.Point(5, 74);
             this.TxtGeneralBillNumber.Name = "TxtGeneralBillNumber";
             this.TxtGeneralBillNumber.Properties.NullValuePrompt = "ادخل رقم الدفتر";
-            this.TxtGeneralBillNumber.Size = new System.Drawing.Size(200, 19);
+            this.TxtGeneralBillNumber.Size = new System.Drawing.Size(200, 20);
             this.TxtGeneralBillNumber.TabIndex = 2;
             // 
             // labelControl4
@@ -217,7 +225,7 @@
             this.TxtGeneralConstraintNo.Location = new System.Drawing.Point(5, 49);
             this.TxtGeneralConstraintNo.Name = "TxtGeneralConstraintNo";
             this.TxtGeneralConstraintNo.Properties.NullValuePrompt = "ادخل رقم القيد";
-            this.TxtGeneralConstraintNo.Size = new System.Drawing.Size(200, 19);
+            this.TxtGeneralConstraintNo.Size = new System.Drawing.Size(200, 20);
             this.TxtGeneralConstraintNo.TabIndex = 1;
             // 
             // labelControl3
@@ -239,7 +247,7 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("YearName", "اختار اسم السنه")});
             this.LUEYear.Properties.NullText = "";
             this.LUEYear.Properties.NullValuePrompt = "اختار كود السنه";
-            this.LUEYear.Size = new System.Drawing.Size(200, 19);
+            this.LUEYear.Size = new System.Drawing.Size(200, 20);
             this.LUEYear.TabIndex = 0;
             // 
             // labelControl2
@@ -260,8 +268,8 @@
             // 
             // GroupControlAdding
             // 
-            this.GroupControlAdding.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupControlAdding.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupControlAdding.Controls.Add(this.MemoTxtDes);
             this.GroupControlAdding.Controls.Add(this.BtnLoadAccNames);
             this.GroupControlAdding.Controls.Add(this.CBEConsTypes);
@@ -288,7 +296,7 @@
             this.MemoTxtDes.Name = "MemoTxtDes";
             this.MemoTxtDes.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.MemoTxtDes.Size = new System.Drawing.Size(200, 19);
+            this.MemoTxtDes.Size = new System.Drawing.Size(200, 20);
             this.MemoTxtDes.TabIndex = 10;
             // 
             // BtnLoadAccNames
@@ -312,7 +320,7 @@
             this.CBEConsTypes.Properties.Items.AddRange(new object[] {
             "مديـــــــن",
             "دائــــــــن"});
-            this.CBEConsTypes.Size = new System.Drawing.Size(85, 19);
+            this.CBEConsTypes.Size = new System.Drawing.Size(85, 20);
             this.CBEConsTypes.TabIndex = 6;
             // 
             // BtnAdd
@@ -334,7 +342,7 @@
             this.TxtAccName.Properties.NullText = "ادخل اسم الحساب";
             this.TxtAccName.Properties.NullValuePrompt = "ادخل اسم الحساب";
             this.TxtAccName.Properties.ReadOnly = true;
-            this.TxtAccName.Size = new System.Drawing.Size(151, 19);
+            this.TxtAccName.Size = new System.Drawing.Size(151, 20);
             this.TxtAccName.TabIndex = 8;
             this.TxtAccName.TabStop = false;
             // 
@@ -345,7 +353,7 @@
             this.TxtConsValue.Location = new System.Drawing.Point(7, 36);
             this.TxtConsValue.Name = "TxtConsValue";
             this.TxtConsValue.Properties.NullValuePrompt = "ادخل القيمه";
-            this.TxtConsValue.Size = new System.Drawing.Size(109, 19);
+            this.TxtConsValue.Size = new System.Drawing.Size(109, 20);
             this.TxtConsValue.TabIndex = 7;
             // 
             // TxtBillNumber
@@ -354,7 +362,7 @@
             this.TxtBillNumber.Location = new System.Drawing.Point(7, 86);
             this.TxtBillNumber.Name = "TxtBillNumber";
             this.TxtBillNumber.Properties.NullValuePrompt = "ادخل رقم الدفتر";
-            this.TxtBillNumber.Size = new System.Drawing.Size(200, 19);
+            this.TxtBillNumber.Size = new System.Drawing.Size(200, 20);
             this.TxtBillNumber.TabIndex = 9;
             // 
             // labelControl7
@@ -395,9 +403,9 @@
             // 
             // GroupControlDetials
             // 
-            this.GroupControlDetials.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.GroupControlDetials.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GroupControlDetials.Controls.Add(this.groupControl2);
             this.GroupControlDetials.Controls.Add(this.GCDetials);
             this.GroupControlDetials.Controls.Add(this.BtnSave);
@@ -470,9 +478,9 @@
             // GCDetials
             // 
             this.GCDetials.AccessibleDescription = "FalseX2010";
-            this.GCDetials.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.GCDetials.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GCDetials.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.GCDetials.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.GCDetials.EmbeddedNavigator.Buttons.Edit.Visible = false;
@@ -498,6 +506,7 @@
             this.gridView1.GridControl = this.GCDetials;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowAutoFilterRow = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowCountChanged += new System.EventHandler(this.gridView1_RowCountChanged);
             // 
             // gridColumn1
@@ -562,9 +571,9 @@
             // 
             // xtraTabControl1
             // 
-            this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.xtraTabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.xtraTabControl1.Location = new System.Drawing.Point(8, 4);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPageAdd;
@@ -580,7 +589,7 @@
             this.xtraTabPageAdd.Controls.Add(this.GroupControlDetials);
             this.xtraTabPageAdd.Controls.Add(this.GroupControlAdding);
             this.xtraTabPageAdd.Name = "xtraTabPageAdd";
-            this.xtraTabPageAdd.Size = new System.Drawing.Size(666, 530);
+            this.xtraTabPageAdd.Size = new System.Drawing.Size(666, 529);
             this.xtraTabPageAdd.Text = "اضافــــــه";
             // 
             // xtraTabPageDelete
@@ -588,14 +597,14 @@
             this.xtraTabPageDelete.Controls.Add(this.groupControl3);
             this.xtraTabPageDelete.Controls.Add(this.groupControl1);
             this.xtraTabPageDelete.Name = "xtraTabPageDelete";
-            this.xtraTabPageDelete.Size = new System.Drawing.Size(666, 530);
+            this.xtraTabPageDelete.Size = new System.Drawing.Size(666, 529);
             this.xtraTabPageDelete.Text = "حـــــــذف";
             // 
             // groupControl3
             // 
-            this.groupControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupControl3.Controls.Add(this.GCDelCons);
             this.groupControl3.Location = new System.Drawing.Point(4, 92);
             this.groupControl3.Name = "groupControl3";
@@ -606,9 +615,9 @@
             // GCDelCons
             // 
             this.GCDelCons.AccessibleDescription = "FalseX2010";
-            this.GCDelCons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.GCDelCons.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GCDelCons.EmbeddedNavigator.Buttons.Append.Visible = false;
             this.GCDelCons.EmbeddedNavigator.Buttons.CancelEdit.Visible = false;
             this.GCDelCons.EmbeddedNavigator.Buttons.Edit.Visible = false;
@@ -688,11 +697,11 @@
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.BtnDelCon);
-            this.groupControl1.Controls.Add(this.LUEDelCons);
             this.groupControl1.Controls.Add(this.labelControl11);
-            this.groupControl1.Location = new System.Drawing.Point(124, 17);
+            this.groupControl1.Controls.Add(this.LUEDelCons);
+            this.groupControl1.Location = new System.Drawing.Point(78, 17);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(416, 69);
+            this.groupControl1.Size = new System.Drawing.Size(497, 69);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "جميع القيــــود";
             // 
@@ -706,6 +715,14 @@
             this.BtnDelCon.Text = "حــــــــــــذف";
             this.BtnDelCon.Click += new System.EventHandler(this.BtnDelCon_Click);
             // 
+            // labelControl11
+            // 
+            this.labelControl11.Location = new System.Drawing.Point(432, 37);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(60, 13);
+            this.labelControl11.TabIndex = 0;
+            this.labelControl11.Text = "القيود اليوميه";
+            // 
             // LUEDelCons
             // 
             this.LUEDelCons.Location = new System.Drawing.Point(110, 34);
@@ -713,27 +730,100 @@
             this.LUEDelCons.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             this.LUEDelCons.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.LUEDelCons.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TRANSID", "TRANSID", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("KIEDNO", "رقم القيد"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("KIEDDAFTRYNO", "الرقم الدفتري"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("KIEDDATE", "تاريخ القيد", 20, DevExpress.Utils.FormatType.DateTime, "dd/MM/yyyy", true, DevExpress.Utils.HorzAlignment.Default),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("YearName", "اسم السنه"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("KIEDDESC", "وصف القيد")});
-            this.LUEDelCons.Properties.HeaderClickMode = DevExpress.XtraEditors.Controls.HeaderClickMode.AutoSearch;
             this.LUEDelCons.Properties.NullText = "";
             this.LUEDelCons.Properties.NullValuePrompt = "اختار القيد";
-            this.LUEDelCons.Size = new System.Drawing.Size(205, 19);
+            this.LUEDelCons.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.LUEDelCons.Properties.View = this.gridLookUpEdit1View;
+            this.LUEDelCons.Size = new System.Drawing.Size(316, 20);
             this.LUEDelCons.TabIndex = 0;
             this.LUEDelCons.EditValueChanged += new System.EventHandler(this.LUEDelCons_EditValueChanged);
             // 
-            // labelControl11
+            // gridLookUpEdit1View
             // 
-            this.labelControl11.Location = new System.Drawing.Point(321, 37);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(60, 13);
-            this.labelControl11.TabIndex = 0;
-            this.labelControl11.Text = "القيود اليوميه";
+            this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn13,
+            this.gridColumn14,
+            this.gridColumn15,
+            this.gridColumn16,
+            this.gridColumn17,
+            this.gridColumn18});
+            this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
+            this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridLookUpEdit1View.OptionsView.ShowAutoFilterRow = true;
+            this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn13.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn13.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn13.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn13.Caption = "TRANSID";
+            this.gridColumn13.FieldName = "TRANSID";
+            this.gridColumn13.Name = "gridColumn13";
+            this.gridColumn13.Visible = true;
+            this.gridColumn13.VisibleIndex = 0;
+            // 
+            // gridColumn14
+            // 
+            this.gridColumn14.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn14.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn14.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn14.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn14.Caption = "رقم القيد";
+            this.gridColumn14.FieldName = "KIEDNO";
+            this.gridColumn14.Name = "gridColumn14";
+            this.gridColumn14.Visible = true;
+            this.gridColumn14.VisibleIndex = 1;
+            // 
+            // gridColumn15
+            // 
+            this.gridColumn15.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn15.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn15.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn15.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn15.Caption = "الرقم الدفتري";
+            this.gridColumn15.FieldName = "KIEDDAFTRYNO";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 2;
+            // 
+            // gridColumn16
+            // 
+            this.gridColumn16.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn16.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn16.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn16.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn16.Caption = "تاريخ القيد";
+            this.gridColumn16.FieldName = "KIEDDATE";
+            this.gridColumn16.Name = "gridColumn16";
+            this.gridColumn16.Visible = true;
+            this.gridColumn16.VisibleIndex = 3;
+            // 
+            // gridColumn17
+            // 
+            this.gridColumn17.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn17.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn17.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn17.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn17.Caption = "اسم السنه";
+            this.gridColumn17.FieldName = "YearName";
+            this.gridColumn17.Name = "gridColumn17";
+            this.gridColumn17.Visible = true;
+            this.gridColumn17.VisibleIndex = 4;
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.AppearanceCell.Options.UseTextOptions = true;
+            this.gridColumn18.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn18.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn18.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn18.Caption = "وصف القيد";
+            this.gridColumn18.FieldName = "KIEDDESC";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 5;
             // 
             // ConstraintsDailyFrm
             // 
@@ -748,7 +838,7 @@
             this.GCGeneralCons.ResumeLayout(false);
             this.GCGeneralCons.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MemoTxtGeneralDes.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DEDate.Properties.VistaTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DEDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DEDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtGeneralBillNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtGeneralConstraintNo.Properties)).EndInit();
@@ -780,6 +870,7 @@
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LUEDelCons.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -840,8 +931,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.LookUpEdit LUEDelCons;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.SimpleButton BtnDelCon;
+        private DevExpress.XtraEditors.GridLookUpEdit LUEDelCons;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridLookUpEdit1View;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
     }
 }

@@ -79,9 +79,9 @@
             // 
             // TreeListAcc
             // 
-            this.TreeListAcc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TreeListAcc.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TreeListAcc.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.treeListColumn1,
             this.treeListColumn6,
@@ -110,7 +110,7 @@
             this.repositoryItemButtonEdit1});
             this.TreeListAcc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.TreeListAcc.SelectImageList = this.imageCollectionNodes;
-            this.TreeListAcc.Size = new System.Drawing.Size(840, 300);
+            this.TreeListAcc.Size = new System.Drawing.Size(840, 301);
             this.TreeListAcc.TabIndex = 0;
             this.TreeListAcc.AfterExpand += new DevExpress.XtraTreeList.NodeEventHandler(this.TreeListAcc_AfterExpand);
             this.TreeListAcc.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.TreeListAcc_FocusedNodeChanged);
@@ -198,7 +198,7 @@
             this.GCCodes.Controls.Add(this.LblParentName);
             this.GCCodes.Controls.Add(this.LblTreeID);
             this.GCCodes.Controls.Add(this.labelControl1);
-            this.GCCodes.Location = new System.Drawing.Point(12, 318);
+            this.GCCodes.Location = new System.Drawing.Point(12, 319);
             this.GCCodes.Name = "GCCodes";
             this.GCCodes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.GCCodes.Size = new System.Drawing.Size(293, 136);
@@ -210,7 +210,7 @@
             // 
             this.labelControl15.Location = new System.Drawing.Point(175, 34);
             this.labelControl15.Name = "labelControl15";
-            this.labelControl15.Size = new System.Drawing.Size(93, 13);
+            this.labelControl15.Size = new System.Drawing.Size(84, 13);
             this.labelControl15.TabIndex = 0;
             this.labelControl15.Text = "اسم الحساب الاب";
             // 
@@ -218,13 +218,12 @@
             // 
             this.LlHyCode.Location = new System.Drawing.Point(85, 85);
             this.LlHyCode.Name = "LlHyCode";
-            this.LlHyCode.Size = new System.Drawing.Size(128, 13);
+            this.LlHyCode.Size = new System.Drawing.Size(104, 13);
             this.LlHyCode.TabIndex = 0;
             this.LlHyCode.Text = "كود الحساب في الدليل";
             // 
             // LblAccCode
             // 
-            this.LblAccCode.Appearance.Options.UseTextOptions = true;
             this.LblAccCode.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.LblAccCode.Location = new System.Drawing.Point(31, 53);
             this.LblAccCode.Name = "LblAccCode";
@@ -242,7 +241,6 @@
             // 
             // LblTreeID
             // 
-            this.LblTreeID.Appearance.Options.UseTextOptions = true;
             this.LblTreeID.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.LblTreeID.Location = new System.Drawing.Point(137, 104);
             this.LblTreeID.Name = "LblTreeID";
@@ -254,14 +252,14 @@
             // 
             this.labelControl1.Location = new System.Drawing.Point(205, 53);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(63, 13);
+            this.labelControl1.Size = new System.Drawing.Size(55, 13);
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "كود الحساب";
             // 
             // GCDetails
             // 
-            this.GCDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.GCDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.GCDetails.Controls.Add(this.LUEAccEndCount);
             this.GCDetails.Controls.Add(this.LUEAccType);
             this.GCDetails.Controls.Add(this.TxtBudge);
@@ -270,7 +268,7 @@
             this.GCDetails.Controls.Add(this.labelControl9);
             this.GCDetails.Controls.Add(this.labelControl8);
             this.GCDetails.Controls.Add(this.labelControl7);
-            this.GCDetails.Location = new System.Drawing.Point(311, 318);
+            this.GCDetails.Location = new System.Drawing.Point(311, 319);
             this.GCDetails.Name = "GCDetails";
             this.GCDetails.Size = new System.Drawing.Size(319, 136);
             this.GCDetails.TabIndex = 1;
@@ -280,7 +278,7 @@
             // LUEAccEndCount
             // 
             this.LUEAccEndCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LUEAccEndCount.Location = new System.Drawing.Point(12, 105);
+            this.LUEAccEndCount.Location = new System.Drawing.Point(12, 54);
             this.LUEAccEndCount.Name = "LUEAccEndCount";
             this.LUEAccEndCount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -289,13 +287,13 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("KhtamiaccName", "اسماء الاكواد الختاميه")});
             this.LUEAccEndCount.Properties.NullText = "";
             this.LUEAccEndCount.Properties.NullValuePrompt = "اختار الحساب الختامي";
-            this.LUEAccEndCount.Size = new System.Drawing.Size(187, 19);
+            this.LUEAccEndCount.Size = new System.Drawing.Size(187, 20);
             this.LUEAccEndCount.TabIndex = 4;
             // 
             // LUEAccType
             // 
             this.LUEAccType.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LUEAccType.Location = new System.Drawing.Point(12, 55);
+            this.LUEAccType.Location = new System.Drawing.Point(12, 106);
             this.LUEAccType.Name = "LUEAccType";
             this.LUEAccType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -304,8 +302,9 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("AccNatueName", "انوع طبيعة الحسابات")});
             this.LUEAccType.Properties.NullText = "";
             this.LUEAccType.Properties.NullValuePrompt = "اختار طبيعة";
-            this.LUEAccType.Size = new System.Drawing.Size(187, 19);
+            this.LUEAccType.Size = new System.Drawing.Size(187, 20);
             this.LUEAccType.TabIndex = 2;
+            this.LUEAccType.Visible = false;
             // 
             // TxtBudge
             // 
@@ -316,8 +315,9 @@
             this.TxtBudge.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TxtBudge.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.TxtBudge.Properties.MaxLength = 8;
-            this.TxtBudge.Size = new System.Drawing.Size(187, 19);
+            this.TxtBudge.Size = new System.Drawing.Size(187, 20);
             this.TxtBudge.TabIndex = 3;
+            this.TxtBudge.Visible = false;
             // 
             // TxtAccName
             // 
@@ -325,43 +325,45 @@
             this.TxtAccName.Location = new System.Drawing.Point(12, 30);
             this.TxtAccName.Name = "TxtAccName";
             this.TxtAccName.Properties.MaxLength = 150;
-            this.TxtAccName.Size = new System.Drawing.Size(187, 19);
+            this.TxtAccName.Size = new System.Drawing.Size(187, 20);
             this.TxtAccName.TabIndex = 1;
             this.TxtAccName.EditValueChanged += new System.EventHandler(this.TxtAccName_EditValueChanged);
             // 
             // labelControl10
             // 
             this.labelControl10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl10.Location = new System.Drawing.Point(205, 108);
+            this.labelControl10.Location = new System.Drawing.Point(223, 57);
             this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(102, 13);
+            this.labelControl10.Size = new System.Drawing.Size(85, 13);
             this.labelControl10.TabIndex = 0;
             this.labelControl10.Text = "كود الحساب الختام";
             // 
             // labelControl9
             // 
             this.labelControl9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl9.Location = new System.Drawing.Point(233, 83);
+            this.labelControl9.Location = new System.Drawing.Point(251, 83);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(74, 13);
+            this.labelControl9.Size = new System.Drawing.Size(57, 13);
             this.labelControl9.TabIndex = 0;
             this.labelControl9.Text = "مبلغ الموازنه";
+            this.labelControl9.Visible = false;
             // 
             // labelControl8
             // 
             this.labelControl8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl8.Location = new System.Drawing.Point(224, 58);
+            this.labelControl8.Location = new System.Drawing.Point(241, 109);
             this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(83, 13);
+            this.labelControl8.Size = new System.Drawing.Size(67, 13);
             this.labelControl8.TabIndex = 0;
             this.labelControl8.Text = "طبيعة الحساب";
+            this.labelControl8.Visible = false;
             // 
             // labelControl7
             // 
             this.labelControl7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelControl7.Location = new System.Drawing.Point(239, 33);
+            this.labelControl7.Location = new System.Drawing.Point(246, 33);
             this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(68, 13);
+            this.labelControl7.Size = new System.Drawing.Size(62, 13);
             this.labelControl7.TabIndex = 0;
             this.labelControl7.Text = "اسم الحساب";
             // 
@@ -372,7 +374,7 @@
             this.groupControl3.Controls.Add(this.BtnDelete);
             this.groupControl3.Controls.Add(this.BtnSave);
             this.groupControl3.Controls.Add(this.BtnNew);
-            this.groupControl3.Location = new System.Drawing.Point(636, 318);
+            this.groupControl3.Location = new System.Drawing.Point(636, 319);
             this.groupControl3.Name = "groupControl3";
             this.groupControl3.Size = new System.Drawing.Size(214, 136);
             this.groupControl3.TabIndex = 5;
@@ -422,7 +424,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(862, 462);
+            this.ClientSize = new System.Drawing.Size(862, 463);
             this.Controls.Add(this.groupControl3);
             this.Controls.Add(this.GCDetails);
             this.Controls.Add(this.GCCodes);

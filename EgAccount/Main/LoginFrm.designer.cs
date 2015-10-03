@@ -41,7 +41,7 @@
             // labelControl1
             // 
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl1.Location = new System.Drawing.Point(206, 21);
+            this.labelControl1.Location = new System.Drawing.Point(232, 21);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(74, 13);
             this.labelControl1.TabIndex = 0;
@@ -69,7 +69,7 @@
             // labelControl2
             // 
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.labelControl2.Location = new System.Drawing.Point(227, 52);
+            this.labelControl2.Location = new System.Drawing.Point(253, 52);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(54, 13);
             this.labelControl2.TabIndex = 0;
@@ -89,7 +89,7 @@
             // BtnEnd
             // 
             this.BtnEnd.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.BtnEnd.Location = new System.Drawing.Point(215, 107);
+            this.BtnEnd.Location = new System.Drawing.Point(232, 107);
             this.BtnEnd.Name = "BtnEnd";
             this.BtnEnd.Size = new System.Drawing.Size(75, 23);
             this.BtnEnd.TabIndex = 3;
@@ -101,8 +101,10 @@
             this.AcceptButton = this.BtnEnter;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
+            this.BackgroundImageStore = global::EgAccount.Properties.Resources.MSGBOXFrm;
             this.CancelButton = this.BtnEnd;
-            this.ClientSize = new System.Drawing.Size(288, 138);
+            this.ClientSize = new System.Drawing.Size(319, 134);
             this.ControlBox = false;
             this.Controls.Add(this.BtnEnd);
             this.Controls.Add(this.BtnEnter);

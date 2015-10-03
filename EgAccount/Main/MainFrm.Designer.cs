@@ -278,7 +278,7 @@
             // 
             this.qrysellsFrmToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Qry;
             this.qrysellsFrmToolStripMenuItem.Name = "qrysellsFrmToolStripMenuItem";
-            this.qrysellsFrmToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.qrysellsFrmToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.qrysellsFrmToolStripMenuItem.Text = "استعلام المبيعات";
             this.qrysellsFrmToolStripMenuItem.Visible = false;
             this.qrysellsFrmToolStripMenuItem.Click += new System.EventHandler(this.qrysellsFrmToolStripMenuItem_Click);
@@ -287,7 +287,7 @@
             // 
             this.qryQryBuysFrmToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Qry;
             this.qryQryBuysFrmToolStripMenuItem.Name = "qryQryBuysFrmToolStripMenuItem";
-            this.qryQryBuysFrmToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.qryQryBuysFrmToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.qryQryBuysFrmToolStripMenuItem.Text = "استعلام المشتريات";
             this.qryQryBuysFrmToolStripMenuItem.Visible = false;
             this.qryQryBuysFrmToolStripMenuItem.Click += new System.EventHandler(this.qryQryBuysFrmToolStripMenuItem_Click);
@@ -547,6 +547,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::EgAccount.Properties.Resources.ECCM_BG;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(796, 573);
             this.Controls.Add(this.statusStrip);

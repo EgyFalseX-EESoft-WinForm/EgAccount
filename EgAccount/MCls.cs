@@ -191,6 +191,48 @@ namespace EgAccount
             }
         }
         //Database
+      
+        public static void PrepareBaseRole(MenuStrip menu)
+        {
+            ToolStripMenuItem[] MenuItemZ = null;
+            foreach (ToolStripMenuItem item in menu.Items)
+                GetSubMenuItem(item, ref MenuItemZ);
+            
+            EgAccount.Datasource.dsDataTableAdapters.RoleDetialTableAdapter adp = new EgAccount.Datasource.dsDataTableAdapters.RoleDetialTableAdapter();
+            try
+            {
+                foreach (object item in MenuItemZ)
+                {
+                    adp.InsertBaseRole(1, ((ToolStripMenuItem)item).Name, true, true, true, true);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        private static void GetSubMenuItem(ToolStripMenuItem MItem, ref ToolStripMenuItem[] MenuItemZ)
+        {
+            foreach (ToolStripMenuItem item in MItem.DropDownItems)
+            {
+                if (MenuItemZ == null)
+                {
+                    MenuItemZ = new ToolStripMenuItem[1];
+                }
+                else
+                {
+                    ToolStripMenuItem[] tempItemList = new ToolStripMenuItem[MenuItemZ.Length + 1];
+                    MenuItemZ.CopyTo(tempItemList, 0);
+                    MenuItemZ = tempItemList;
+                }
+                MenuItemZ[MenuItemZ.Length - 1] = item;
+
+                if (item.DropDownItems != null)
+                {
+                    GetSubMenuItem(item, ref MenuItemZ);
+                }
+            }
+        }
         public static DataTable LoadDataTable(string CommandString)
         {
             

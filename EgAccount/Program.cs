@@ -22,10 +22,14 @@ namespace EgAccount
             DevExpress.LookAndFeel.UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
             if (MCls.LoadSqlDBPath())
             {
+                Properties.Settings.Default["EGAccountConnectionString"] = MCls.SQLConStrStoreAccount;
                 //MCls.LoadSQLReports();
-                Application.Run(new MainFrm());
+                MainFrm FrmMain = new MainFrm();
+                MCls.PrepareBaseRole(FrmMain.menuStrip);
+                Application.Run(FrmMain);
             }
         }
         
+
     }
 }

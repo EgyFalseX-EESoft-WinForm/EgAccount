@@ -60,6 +60,7 @@ namespace EgAccount
         public MainFrm()
         {
             InitializeComponent();
+            
         }
         private static UserSettings LoadSettings(string fileName)
         {
