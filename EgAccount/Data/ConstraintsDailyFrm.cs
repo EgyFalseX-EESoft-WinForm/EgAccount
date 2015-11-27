@@ -20,6 +20,12 @@ namespace EgAccount
         public ConstraintsDailyFrm()
         {
             InitializeComponent();
+            ConsDetials.Columns.Add("Madeen", typeof(int));
+            ConsDetials.Columns.Add("Daien", typeof(int));
+            ConsDetials.Columns.Add("AccountName");
+            ConsDetials.Columns.Add("Accountid");
+            ConsDetials.Columns.Add("MostandNo");
+            ConsDetials.Columns.Add("kieddes");
             ClearForm();
         }
         private void ClearForm()
@@ -44,12 +50,7 @@ namespace EgAccount
         }
         private void ConstraintsDailyFrm_Load(object sender, EventArgs e)
         {
-            ConsDetials.Columns.Add("Madeen",typeof(int));
-            ConsDetials.Columns.Add("Daien", typeof(int));
-            ConsDetials.Columns.Add("AccountName");
-            ConsDetials.Columns.Add("Accountid");
-            ConsDetials.Columns.Add("MostandNo");
-            ConsDetials.Columns.Add("kieddes");
+            
             LoadDefaultData();
             LoadAllCons();
         }
