@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccTypesFrm));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.TreeListAcc = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn6 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -39,7 +43,10 @@
             this.treeListColumn3 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn4 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn5 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn8 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.repositoryItemCheckEditaznsarf = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.treeListColumn7 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.treeListColumn9 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.imageCollectionNodes = new DevExpress.Utils.ImageCollection(this.components);
             this.GCCodes = new DevExpress.XtraEditors.GroupControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
@@ -49,6 +56,7 @@
             this.LblTreeID = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.GCDetails = new DevExpress.XtraEditors.GroupControl();
+            this.ceaznsarf = new DevExpress.XtraEditors.CheckEdit();
             this.LUEAccEndCount = new DevExpress.XtraEditors.LookUpEdit();
             this.LUEAccType = new DevExpress.XtraEditors.LookUpEdit();
             this.TxtBudge = new DevExpress.XtraEditors.TextEdit();
@@ -62,19 +70,27 @@
             this.BtnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.BtnSave = new DevExpress.XtraEditors.SimpleButton();
             this.BtnNew = new DevExpress.XtraEditors.SimpleButton();
+            this.tbL_AccountesTableAdapter = new EgAccount.Datasource.dsDataTableAdapters.TBL_AccountesTableAdapter();
+            this.dsData = new EgAccount.Datasource.dsData();
+            this.queriesTableAdapter = new EgAccount.Datasource.dsQryTableAdapters.QueriesTableAdapter();
+            this.dxvp = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.TreeListAcc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditaznsarf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionNodes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GCCodes)).BeginInit();
             this.GCCodes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GCDetails)).BeginInit();
             this.GCDetails.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ceaznsarf.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LUEAccEndCount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LUEAccType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtBudge.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtAccName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxvp)).BeginInit();
             this.SuspendLayout();
             // 
             // TreeListAcc
@@ -89,12 +105,16 @@
             this.treeListColumn3,
             this.treeListColumn4,
             this.treeListColumn5,
-            this.treeListColumn7});
+            this.treeListColumn8,
+            this.treeListColumn7,
+            this.treeListColumn9});
             this.TreeListAcc.Location = new System.Drawing.Point(10, 12);
             this.TreeListAcc.Name = "TreeListAcc";
             this.TreeListAcc.BeginUnboundLoad();
             this.TreeListAcc.AppendNode(new object[] {
             "شجرة الحسابات",
+            null,
+            null,
             null,
             null,
             null,
@@ -107,7 +127,8 @@
             this.TreeListAcc.OptionsLayout.AddNewColumns = false;
             this.TreeListAcc.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.TreeListAcc.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemButtonEdit1});
+            this.repositoryItemButtonEdit1,
+            this.repositoryItemCheckEditaznsarf});
             this.TreeListAcc.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.TreeListAcc.SelectImageList = this.imageCollectionNodes;
             this.TreeListAcc.Size = new System.Drawing.Size(840, 301);
@@ -123,7 +144,7 @@
             this.treeListColumn1.Name = "treeListColumn1";
             this.treeListColumn1.Visible = true;
             this.treeListColumn1.VisibleIndex = 0;
-            this.treeListColumn1.Width = 91;
+            this.treeListColumn1.Width = 117;
             // 
             // treeListColumn6
             // 
@@ -132,6 +153,7 @@
             this.treeListColumn6.Name = "treeListColumn6";
             this.treeListColumn6.Visible = true;
             this.treeListColumn6.VisibleIndex = 1;
+            this.treeListColumn6.Width = 101;
             // 
             // treeListColumn2
             // 
@@ -141,6 +163,7 @@
             this.treeListColumn2.Name = "treeListColumn2";
             this.treeListColumn2.Visible = true;
             this.treeListColumn2.VisibleIndex = 2;
+            this.treeListColumn2.Width = 101;
             // 
             // repositoryItemButtonEdit1
             // 
@@ -157,14 +180,15 @@
             this.treeListColumn3.Name = "treeListColumn3";
             this.treeListColumn3.Visible = true;
             this.treeListColumn3.VisibleIndex = 3;
+            this.treeListColumn3.Width = 101;
             // 
             // treeListColumn4
             // 
             this.treeListColumn4.Caption = "مبلغ الموازنه";
             this.treeListColumn4.FieldName = "AccountBudget";
             this.treeListColumn4.Name = "treeListColumn4";
-            this.treeListColumn4.Visible = true;
-            this.treeListColumn4.VisibleIndex = 4;
+            this.treeListColumn4.OptionsColumn.ShowInCustomizationForm = false;
+            this.treeListColumn4.Width = 92;
             // 
             // treeListColumn5
             // 
@@ -172,15 +196,39 @@
             this.treeListColumn5.FieldName = "AsKhtamiaccName";
             this.treeListColumn5.Name = "treeListColumn5";
             this.treeListColumn5.Visible = true;
-            this.treeListColumn5.VisibleIndex = 5;
+            this.treeListColumn5.VisibleIndex = 4;
+            this.treeListColumn5.Width = 104;
+            // 
+            // treeListColumn8
+            // 
+            this.treeListColumn8.Caption = "اذن صرف";
+            this.treeListColumn8.ColumnEdit = this.repositoryItemCheckEditaznsarf;
+            this.treeListColumn8.FieldName = "aznsarf";
+            this.treeListColumn8.Name = "treeListColumn8";
+            this.treeListColumn8.Visible = true;
+            this.treeListColumn8.VisibleIndex = 5;
+            this.treeListColumn8.Width = 103;
+            // 
+            // repositoryItemCheckEditaznsarf
+            // 
+            this.repositoryItemCheckEditaznsarf.AutoHeight = false;
+            this.repositoryItemCheckEditaznsarf.Name = "repositoryItemCheckEditaznsarf";
             // 
             // treeListColumn7
             // 
-            this.treeListColumn7.Caption = "AccountId";
+            this.treeListColumn7.Caption = "كود";
             this.treeListColumn7.FieldName = "AccountId";
             this.treeListColumn7.Name = "treeListColumn7";
             this.treeListColumn7.Visible = true;
             this.treeListColumn7.VisibleIndex = 6;
+            this.treeListColumn7.Width = 103;
+            // 
+            // treeListColumn9
+            // 
+            this.treeListColumn9.Caption = "KhtamiaccID";
+            this.treeListColumn9.FieldName = "KhtamiaccID";
+            this.treeListColumn9.Name = "treeListColumn9";
+            this.treeListColumn9.OptionsColumn.ShowInCustomizationForm = false;
             // 
             // imageCollectionNodes
             // 
@@ -260,6 +308,7 @@
             // 
             this.GCDetails.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.GCDetails.Controls.Add(this.ceaznsarf);
             this.GCDetails.Controls.Add(this.LUEAccEndCount);
             this.GCDetails.Controls.Add(this.LUEAccType);
             this.GCDetails.Controls.Add(this.TxtBudge);
@@ -275,6 +324,18 @@
             this.GCDetails.Text = "تفاصيل الحساب";
             this.GCDetails.Visible = false;
             // 
+            // ceaznsarf
+            // 
+            this.ceaznsarf.Location = new System.Drawing.Point(12, 81);
+            this.ceaznsarf.Name = "ceaznsarf";
+            this.ceaznsarf.Properties.Caption = "اذن صرف";
+            this.ceaznsarf.Size = new System.Drawing.Size(75, 19);
+            this.ceaznsarf.TabIndex = 3;
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxvp.SetValidationRule(this.ceaznsarf, conditionValidationRule1);
+            // 
             // LUEAccEndCount
             // 
             this.LUEAccEndCount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -287,8 +348,13 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("KhtamiaccName", "اسماء الاكواد الختاميه")});
             this.LUEAccEndCount.Properties.NullText = "";
             this.LUEAccEndCount.Properties.NullValuePrompt = "اختار الحساب الختامي";
+            this.LUEAccEndCount.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.LUEAccEndCount.Size = new System.Drawing.Size(187, 20);
             this.LUEAccEndCount.TabIndex = 4;
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxvp.SetValidationRule(this.LUEAccEndCount, conditionValidationRule2);
             // 
             // LUEAccType
             // 
@@ -304,18 +370,21 @@
             this.LUEAccType.Properties.NullValuePrompt = "اختار طبيعة";
             this.LUEAccType.Size = new System.Drawing.Size(187, 20);
             this.LUEAccType.TabIndex = 2;
-            this.LUEAccType.Visible = false;
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxvp.SetValidationRule(this.LUEAccType, conditionValidationRule3);
             // 
             // TxtBudge
             // 
             this.TxtBudge.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtBudge.Location = new System.Drawing.Point(12, 80);
+            this.TxtBudge.Location = new System.Drawing.Point(123, 80);
             this.TxtBudge.Name = "TxtBudge";
             this.TxtBudge.Properties.Mask.EditMask = "#####.00";
             this.TxtBudge.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TxtBudge.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.TxtBudge.Properties.MaxLength = 8;
-            this.TxtBudge.Size = new System.Drawing.Size(187, 20);
+            this.TxtBudge.Size = new System.Drawing.Size(76, 20);
             this.TxtBudge.TabIndex = 3;
             this.TxtBudge.Visible = false;
             // 
@@ -327,6 +396,10 @@
             this.TxtAccName.Properties.MaxLength = 150;
             this.TxtAccName.Size = new System.Drawing.Size(187, 20);
             this.TxtAccName.TabIndex = 1;
+            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule4.ErrorText = "This value is not valid";
+            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxvp.SetValidationRule(this.TxtAccName, conditionValidationRule4);
             this.TxtAccName.EditValueChanged += new System.EventHandler(this.TxtAccName_EditValueChanged);
             // 
             // labelControl10
@@ -356,7 +429,6 @@
             this.labelControl8.Size = new System.Drawing.Size(67, 13);
             this.labelControl8.TabIndex = 0;
             this.labelControl8.Text = "طبيعة الحساب";
-            this.labelControl8.Visible = false;
             // 
             // labelControl7
             // 
@@ -420,6 +492,15 @@
             this.BtnNew.Text = "جديد";
             this.BtnNew.Click += new System.EventHandler(this.BtnNew_Click);
             // 
+            // tbL_AccountesTableAdapter
+            // 
+            this.tbL_AccountesTableAdapter.ClearBeforeFill = true;
+            // 
+            // dsData
+            // 
+            this.dsData.DataSetName = "dsData";
+            this.dsData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // AccTypesFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -435,6 +516,7 @@
             this.Load += new System.EventHandler(this.AccTypesFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TreeListAcc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditaznsarf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionNodes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GCCodes)).EndInit();
             this.GCCodes.ResumeLayout(false);
@@ -442,12 +524,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.GCDetails)).EndInit();
             this.GCDetails.ResumeLayout(false);
             this.GCDetails.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ceaznsarf.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LUEAccEndCount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LUEAccType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtBudge.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtAccName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dxvp)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -485,6 +570,13 @@
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn6;
         private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn7;
         private DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit repositoryItemButtonEdit1;
-
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn8;
+        private DevExpress.XtraEditors.CheckEdit ceaznsarf;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEditaznsarf;
+        private Datasource.dsDataTableAdapters.TBL_AccountesTableAdapter tbL_AccountesTableAdapter;
+        private Datasource.dsData dsData;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn treeListColumn9;
+        private Datasource.dsQryTableAdapters.QueriesTableAdapter queriesTableAdapter;
+        private DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider dxvp;
     }
 }

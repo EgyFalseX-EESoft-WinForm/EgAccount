@@ -28,23 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccTypesDlgFrm));
             this.TLAccNames = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.imageCollectionNodes = new DevExpress.Utils.ImageCollection();
             this.BtnOk = new DevExpress.XtraEditors.SimpleButton();
             this.BtnCancel = new DevExpress.XtraEditors.SimpleButton();
-            this.imageCollectionNodes = new DevExpress.Utils.ImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.TLAccNames)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionNodes)).BeginInit();
             this.SuspendLayout();
             // 
             // TLAccNames
             // 
-            this.TLAccNames.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.TLAccNames.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.TLAccNames.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.treeListColumn1,
             this.treeListColumn2});
@@ -69,7 +68,7 @@
             // 
             this.treeListColumn1.Caption = "اسم الحساب";
             this.treeListColumn1.FieldName = "AccountDes";
-            this.treeListColumn1.MinWidth = 37;
+            this.treeListColumn1.MinWidth = 51;
             this.treeListColumn1.Name = "treeListColumn1";
             this.treeListColumn1.Visible = true;
             this.treeListColumn1.VisibleIndex = 0;
@@ -79,6 +78,13 @@
             this.treeListColumn2.Caption = "AccountId";
             this.treeListColumn2.FieldName = "AccountId";
             this.treeListColumn2.Name = "treeListColumn2";
+            // 
+            // imageCollectionNodes
+            // 
+            this.imageCollectionNodes.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollectionNodes.ImageStream")));
+            this.imageCollectionNodes.Images.SetKeyName(0, "NodeItems.jpg");
+            this.imageCollectionNodes.Images.SetKeyName(1, "NodeSelected.png");
+            this.imageCollectionNodes.Images.SetKeyName(2, "NodeNotSelected.png");
             // 
             // BtnOk
             // 
@@ -102,13 +108,6 @@
             this.BtnCancel.Text = "الغاء";
             this.BtnCancel.Click += new System.EventHandler(this.BtnCancel_Click);
             // 
-            // imageCollectionNodes
-            // 
-            this.imageCollectionNodes.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollectionNodes.ImageStream")));
-            this.imageCollectionNodes.Images.SetKeyName(0, "NodeItems.jpg");
-            this.imageCollectionNodes.Images.SetKeyName(1, "NodeSelected.png");
-            this.imageCollectionNodes.Images.SetKeyName(2, "NodeNotSelected.png");
-            // 
             // AccTypesDlgFrm
             // 
             this.AcceptButton = this.BtnOk;
@@ -125,6 +124,7 @@
             this.Name = "AccTypesDlgFrm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "الحســــــــــــــابات";
             this.Load += new System.EventHandler(this.AccTypesDlgFrm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TLAccNames)).EndInit();

@@ -23,6 +23,9 @@ namespace EgAccount
             if (MCls.LoadSqlDBPath())
             {
                 Properties.Settings.Default["EGAccountConnectionString"] = MCls.SQLConStrStoreAccount;
+                DevExpress.Xpo.XpoDefault.Session.ConnectionString = MCls.SQLConStrStoreAccount;
+                DevExpress.Xpo.XpoDefault.Session.AutoCreateOption = DevExpress.Xpo.DB.AutoCreateOption.SchemaAlreadyExists;
+                DatabaseScripts.FireScript();
                 //MCls.LoadSQLReports();
                 MainFrm FrmMain = new MainFrm();
                 MCls.PrepareBaseRole(FrmMain.menuStrip);

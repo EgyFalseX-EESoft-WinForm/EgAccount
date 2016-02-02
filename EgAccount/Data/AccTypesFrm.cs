@@ -13,9 +13,12 @@ namespace EgAccount
 {
     public partial class AccTypesFrm : DevExpress.XtraEditors.XtraForm
     {
-
+        Datasource.dsDataTableAdapters.TBL_AccountesTableAdapter adpAcc = new Datasource.dsDataTableAdapters.TBL_AccountesTableAdapter();
+        bool EditMode = false;
+        TreeListNode EditNode = null;
         DataTable AccTypesTbl = new DataTable("FalseX");
         DataTable FinlAccTbl = new DataTable("FalseX");
+        DataTable NodesTbl = new DataTable();
         public AccTypesFrm()
         {
             InitializeComponent();
@@ -25,15 +28,17 @@ namespace EgAccount
             TreeListAcc.Nodes[0].Tag = "FalseX";
             TreeListAcc.Nodes[0].SetValue(1, "0");
             TreeListAcc.Nodes[0].SetValue(2, "شجرة الحسابات");
-            TreeListAcc.Nodes[0].SetValue(6, "-1");
+            TreeListAcc.Nodes[0].SetValue(6, false);
+            TreeListAcc.Nodes[0].SetValue(7, "-1");
             LoadNodes("0", TreeListAcc.Nodes[0], true);
             FillDefaultData();
         }
         private void LoadNodes(string ParentID, TreeListNode Nodi, bool LoadChildNodes)
         {
             Nodi.Nodes.Clear();
-            DataTable NodesTbl = new DataTable("NodeZ");
-            NodesTbl = MCls.LoadDataTable("SELECT AccountId, AccountTreeId, AccountDes, (SELECT KhtamiaccName FROM CDKHTAMIACOUNT WHERE (KhtamiaccID = TBL_Accountes.KhtamiaccID)) AS AsKhtamiaccName, (SELECT AccNatueName FROM CDAccountNature WHERE (AccNatueID = TBL_Accountes.AccNatueID)) AS AccNatueName, AccountBudget, AccountSort FROM TBL_Accountes WHERE (PairantAccount = " + ParentID + ") ORDER BY AccountSort");
+            NodesTbl = new DataTable("NodeZ");
+            NodesTbl = MCls.LoadDataTable(@"SELECT AccountId, AccountTreeId, AccountDes, TBL_Accountes.KhtamiaccID, (SELECT KhtamiaccName FROM CDKHTAMIACOUNT WHERE (KhtamiaccID = TBL_Accountes.KhtamiaccID)) AS AsKhtamiaccName
+            , (SELECT AccNatueName FROM CDAccountNature WHERE (AccNatueID = TBL_Accountes.AccNatueID)) AS AccNatueName, AccountBudget, AccountSort, aznsarf FROM TBL_Accountes WHERE (PairantAccount = " + ParentID + ") ORDER BY AccountSort");
             foreach (DataRow row in NodesTbl.Rows)
             {
                 TreeListNode NewNode =  this.TreeListAcc.AppendNode(new object[] { 
@@ -43,7 +48,9 @@ namespace EgAccount
                     row["AccNatueName"].ToString(),
                     row["AccountBudget"].ToString(),
                     row["AsKhtamiaccName"].ToString(),
-                    row["AccountId"].ToString() }, Nodi.Id, 0, 1, -1);
+                    Convert.ToBoolean(row["aznsarf"]),
+                    row["AccountId"].ToString(),
+                    row["KhtamiaccID"].ToString() }, Nodi.Id, 0, 1, -1);
                 if (LoadChildNodes)
                     LoadNodes(ParentID, NewNode, false);
             }
@@ -192,7 +199,6 @@ namespace EgAccount
         }
         private void TreeListAcc_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
         {
-            
             if (TreeListAcc.Selection.Count == 0)
                 BtnDelete.Enabled = false;
             else
@@ -202,35 +208,56 @@ namespace EgAccount
                 else
                     BtnDelete.Enabled = true;
             }
-
+             
             string NodeID = "0";
-            if (e.Node.GetValue(6) != null)
+            if (e.Node.GetValue(7) != null)
             {
-                if ((string)e.Node.GetValue(6) != "-1")
+                if ((string)e.Node.GetValue(7) != "-1")
                 {
-                    NodeID = e.Node.GetValue(6).ToString();    
+                    NodeID = e.Node.GetValue(7).ToString();    
                 }
             }
             LoadNodes(NodeID, e.Node, true);
+            if ((string)e.Node.GetValue(7) == "-1")
+                return;
+
+            Datasource.dsData.TBL_AccountesRow row = adpAcc.GetDataByID(Convert.ToInt32(e.Node.GetValue(7).ToString()))[0];
+            EditMode = true;
+            //fill editor
+            EditNode = e.Node;
+            TxtAccName.EditValue = e.Node.GetValue(0).ToString();
+            LUEAccEndCount.EditValue =queriesTableAdapter.GetKhtamiaccIDByAccountId(Convert.ToInt32(e.Node.GetValue(7)));
+            ceaznsarf.EditValue = e.Node.GetValue(6);
+            if (!row.IsNull("AccNatueID"))
+                LUEAccType.EditValue = row.AccNatueID;
+            else
+                LUEAccType.EditValue = null;
+            
+
+            GCDetails.Visible = true;
+            //BtnNew.Visible = false;
+            BtnCancel.Visible = true;
+            BtnSave.Visible = true;
         }
         private void TreeListAcc_AfterExpand(object sender, DevExpress.XtraTreeList.NodeEventArgs e)
         {
             string NodeID = "0";
-            if (e.Node.GetValue(6) != null)
+            if (e.Node.GetValue(7) != null)
             {
-                if ((string)e.Node.GetValue(6) != "-1")
+                if ((string)e.Node.GetValue(7) != "-1")
                 {
-                    NodeID = e.Node.GetValue(6).ToString();
+                    NodeID = e.Node.GetValue(7).ToString();
                 }
             }
             LoadNodes(NodeID, e.Node, true);
         }
         private void BtnNew_Click(object sender, EventArgs e)
         {
+            EditMode = false;
             //fill codes group
             LblAccCode.Text = NewNodeID();
-            LblTreeID.Text = GetNewTreeId(TreeListAcc.Selection[0].GetValue(6).ToString(), TreeListAcc.Selection[0].GetValue(1).ToString());
-            LblParentName.Text = TreeListAcc.Selection[0].GetValue(2).ToString();
+            LblTreeID.Text = GetNewTreeId(TreeListAcc.Selection[0].GetValue(7).ToString(), TreeListAcc.Selection[0].GetValue(1).ToString());
+            LblParentName.Text = TreeListAcc.Selection[0].GetValue(2).ToString();ceaznsarf.Checked = false;
             //disable unneeded controls
             TreeListAcc.Enabled = false;
             BtnCancel.Enabled = true;
@@ -246,6 +273,7 @@ namespace EgAccount
             LblAccCode.Text = "None";
             LblTreeID.Text = "None";
             LblParentName.Text = "None";
+            ceaznsarf.Checked = false;
             //enable needed controls
             TreeListAcc.Enabled = true;
             BtnCancel.Enabled = false;
@@ -256,23 +284,40 @@ namespace EgAccount
         }
         private void BtnSave_Click(object sender, EventArgs e)
         {
-            // Save new Node.
+            if (!dxvp.Validate())
+            {
+                return;
+            }
+            //Edit Mode
+            if (EditMode == true)
+            {
+                int id = Convert.ToInt32(EditNode.GetValue(7));
+                tbL_AccountesTableAdapter.UpdateQuery1(TxtAccName.Text, Convert.ToByte(LUEAccEndCount.EditValue), ceaznsarf.Checked, Convert.ToByte(LUEAccType.EditValue), id, id);
+                EditNode.SetValue(2, TxtAccName.EditValue); EditNode.SetValue(0, TxtAccName.EditValue);
+                EditNode.SetValue(3, LUEAccType.EditValue);
+                EditNode.SetValue(8, LUEAccEndCount.EditValue); EditNode.SetValue(6, ceaznsarf.EditValue);
+                EditNode.SetValue(5, LUEAccEndCount.Text);
+                MessageBox.Show("تم تعديل الحساب", "تمت العملية", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
-            string AccountId = "NULL", AccountTreeId = "NULL", PairantAccount = "NULL", AccountDes = "NULL", AccountSort = "NULL", KhtamiaccID = "NULL", AccNatueID = "NULL", AccountBudget = "NULL";
+            // Save new Node.
+            string AccountId = "NULL", AccountTreeId = "NULL", PairantAccount = "NULL", AccountDes = "NULL", AccountSort = "NULL", KhtamiaccID = "NULL", AccNatueID = "NULL", AccountBudget = "NULL", aznsarf = "NULL";
             SqlConnection Con = new SqlConnection(MCls.SQLConStrStoreAccount);
             SqlCommand Cmd = new SqlCommand("", Con);
             AccountId = NewNodeID();
             AccountTreeId = LblTreeID.Text;
-            if (TreeListAcc.Selection[0].GetValue(6).ToString() == "-1")
+            if (TreeListAcc.Selection[0].GetValue(7).ToString() == "-1")
                 PairantAccount = "0";
             else
-                PairantAccount = TreeListAcc.Selection[0].GetValue(6).ToString();
+                PairantAccount = TreeListAcc.Selection[0].GetValue(7).ToString();
             if (TxtAccName.Text.Trim().Length != 0) AccountDes = "N'" + TxtAccName.Text.Trim() + "'";
-            AccountSort = GetNextSoftID(TreeListAcc.Selection[0].GetValue(6).ToString());
+            AccountSort = GetNextSoftID(TreeListAcc.Selection[0].GetValue(7).ToString());
             if (LUEAccEndCount.EditValue != null) KhtamiaccID = LUEAccEndCount.EditValue.ToString();
             if (LUEAccType.EditValue != null) AccNatueID = LUEAccType.EditValue.ToString();
             if (TxtBudge.Text.Trim().Length != 0) AccountBudget = TxtBudge.Text.Trim();
-            Cmd.CommandText = "INSERT INTO TBL_Accountes (AccountId, AccountTreeId, PairantAccount, AccountDes, AccountSort, KhtamiaccID, AccNatueID, AccountBudget) VALUES (" + AccountId + ", " + AccountTreeId + ", " + PairantAccount + ", " + AccountDes + ", " + AccountSort + ", " + KhtamiaccID + ", " + AccNatueID + ", " + AccountBudget + ")";
+            aznsarf = ceaznsarf.Checked.ToString();
+            Cmd.CommandText = "INSERT INTO TBL_Accountes (AccountId, AccountTreeId, PairantAccount, AccountDes, AccountSort, KhtamiaccID, AccNatueID, AccountBudget, aznsarf) VALUES (" + AccountId + ", " + AccountTreeId + ", " + PairantAccount + ", " + AccountDes + ", " + AccountSort + ", " + KhtamiaccID + ", " + AccNatueID + ", " + AccountBudget + ", '" + aznsarf + "')";
             try
             {
                 Con.Open();
@@ -286,6 +331,10 @@ namespace EgAccount
                 MessageBox.Show(ex.Message);
             }
             Con.Close();
+
+            TxtAccName.EditValue = string.Empty;
+            ceaznsarf.EditValue = false;
+            LUEAccEndCount.EditValue = null;
         }
         private string GetNextSoftID(string  ParentID)
         {
@@ -319,13 +368,13 @@ namespace EgAccount
         }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            if (!CheckEmptyNode(TreeListAcc.Selection[0].GetValue(6).ToString()))
+            if (!CheckEmptyNode(TreeListAcc.Selection[0].GetValue(7).ToString()))
             {
                 MessageBox.Show("لا يمكن حذف حساب به حسابات فرعيه","خطـــا",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
             SqlConnection Con = new SqlConnection(MCls.SQLConStrStoreAccount);
-            SqlCommand Cmd = new SqlCommand("DELETE FROM TBL_Accountes WHERE (AccountId = " + TreeListAcc.Selection[0].GetValue(6).ToString() + ")", Con);
+            SqlCommand Cmd = new SqlCommand("DELETE FROM TBL_Accountes WHERE (AccountId = " + TreeListAcc.Selection[0].GetValue(7).ToString() + ")", Con);
             try
             {
                 Con.Open();

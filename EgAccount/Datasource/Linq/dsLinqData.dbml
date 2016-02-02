@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="EGAccount" Class="dsLinqDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=EGAccount;Persist Security Info=True;User ID=sa" SettingsObjectName="EgAccount.Properties.Settings" SettingsPropertyName="EGAccountConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CDAccountNature" Member="CDAccountNatures">
+    <Type Name="CDAccountNature">
+      <Column Name="AccNatueID" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccNatueName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CDBANK" Member="CDBANKs">
+    <Type Name="CDBANK">
+      <Column Name="BankAcountID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BankAcountNO" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BankAcountName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BankAddess" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BankTel1" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="BankTel2" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="BankFax" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="Bremark" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CDKHTAMIACOUNT" Member="CDKHTAMIACOUNTs">
+    <Type Name="CDKHTAMIACOUNT">
+      <Column Name="KhtamiaccID" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="KhtamiaccName" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CDYeras" Member="CDYeras">
+    <Type Name="CDYera">
+      <Column Name="YearID" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="YearName" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="YStartDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="YEndDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vQry001" Member="vQry001s">
+    <Type Name="vQry001">
+      <Column Name="YearName" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="KIEDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KIEDDESC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="trhel" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TRANSID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="YearID" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="KIEDNO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KIEDDAFTRYNO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vTBLCheekNumbers" Member="vTBLCheekNumbers">
+    <Type Name="vTBLCheekNumber">
+      <Column Name="CheekAuto" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BankAcountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CheekNumber" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BankAcountName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BankAcountNO" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vQry002" Member="vQry002s">
+    <Type Name="vQry002">
+      <Column Name="CheekAuto" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BankAcountID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CheekNumber" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BankAcountName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BankAcountNO" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vtblraseed" Member="vtblraseeds">
+    <Type Name="vtblraseed">
+      <Column Name="AccountId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="YearID" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="raseedmadeen" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="raseeddaen" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="YearName" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountDes" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vTBL_Accountes" Member="vTBL_Accountes">
+    <Type Name="vTBL_Accounte">
+      <Column Name="AccountId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AccountTreeId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PairantAccount" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccountDes" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountSort" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="KhtamiaccID" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="AccNatueID" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="AccountBudget" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CuurentMadeen" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CuurentDaien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="aznsarf" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="KhtamiaccName" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="AccNatueName" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vtbleznsars" Member="vtbleznsars">
+    <Type Name="vtbleznsar">
+      <Column Name="eznsarfno" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="TRANSID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CheekAuto" Type="System.Int64" DbType="BigInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="cheekstateid" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="mostafeed" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ezndes" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="CheekNumber" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="BankName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BankAcountName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="YearName" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="KIEDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KIEDDESC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="trhel" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="morfacat" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ezndate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="show" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="tsleem" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="mostlem" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tsleemdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usertasleem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="dateintasleem" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserNameTasleem" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.vTBLkazna" Member="vTBLkaznas">
+    <Type Name="vTBLkazna">
+      <Column Name="actionid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="kaznatypeid" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="eznnumber" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="actiondate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="actionmony" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="acountid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="mostafeed" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="bean" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="closed" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="kaznatype" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="AccountDes" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CDkaznatype" Member="CDkaznatypes">
+    <Type Name="CDkaznatype">
+      <Column Name="kaznatypeid" Type="System.Byte" DbType="TinyInt NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="kaznatype" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

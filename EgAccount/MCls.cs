@@ -28,6 +28,7 @@ namespace EgAccount
         public static string ReportURL = string.Empty;
         public static string ReportPath = string.Empty;
         public static SQLReportsStr[] SQLRep;
+        public static Datasource.dsQryTableAdapters.QueriesTableAdapter adpQ = new Datasource.dsQryTableAdapters.QueriesTableAdapter();
 
         //Forms - Main
         //public SQLConnectionFrm FrmSQLConnection;
@@ -699,6 +700,36 @@ namespace EgAccount
             srvSql.Refresh();
         }
         #endregion
+		public static void ShowPrintPreview(DevExpress.XtraReports.IReport report, bool dlg = false)
+        {
+            // Create a Print Tool and show the Print Preview form. 
+            DevExpress.XtraReports.UI.ReportPrintTool printTool = new DevExpress.XtraReports.UI.ReportPrintTool(report);
+
+            // Set watermark options.
+            //printTool.PrintingSystem.Watermark.Image = Program.CompanyLogo;
+            //printTool.PrintingSystem.Watermark.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            //printTool.PrintingSystem.Watermark.ImageTiling = false;
+            //printTool.PrintingSystem.Watermark.ImageViewMode = DevExpress.XtraPrinting.Drawing.ImageViewMode.Stretch;
+            //printTool.PrintingSystem.Watermark.ImageTransparency = 150;
+            //printTool.PrintingSystem.Watermark.ShowBehind = false;
+            //printTool.PrintingSystem.Watermark.PageRange = "1";
+            if (dlg)
+                printTool.ShowRibbonPreviewDialog();
+            else
+                printTool.ShowRibbonPreview();
+        }
+		public static void SetAllCommandTimeouts(object adapter, int timeout)
+        {
+            var commands = adapter.GetType().InvokeMember("CommandCollection",
+                    System.Reflection.BindingFlags.GetProperty | System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic,
+                    null, adapter, new object[0]);
+            var sqlCommand = (System.Data.IDbCommand[])commands;
+            foreach (var cmd in sqlCommand)
+            {
+                cmd.CommandTimeout = timeout;
+            }
+        }
         #endregion
+		
     }
 }

@@ -81,8 +81,9 @@ namespace EgAccount
         {
             if (TLAccNames.Selection[0].GetValue(1).ToString() != "0")
             {
-                AccountName = TLAccNames.Selection[0].GetValue(0).ToString() ;
+                AccountName = TLAccNames.Selection[0].GetValue(0).ToString();
                 AccountID = TLAccNames.Selection[0].GetValue(1).ToString();
+                DialogResult = System.Windows.Forms.DialogResult.OK;
                 this.Close();
             }
             else
@@ -93,6 +94,7 @@ namespace EgAccount
         {
             AccountName = string.Empty;
             AccountID = string.Empty;
+            DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.Close();
         }
     }

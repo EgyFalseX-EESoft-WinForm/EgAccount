@@ -53,6 +53,7 @@
     <Reference Include="DevExpress.Utils.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.Xpo.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraBars.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v15.1.Wizard, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraCharts.v15.1, Version=15.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -108,15 +109,21 @@
       <HintPath>..\..\..\..\..\Development\SQL Server 2008\Extra Packages\SQL Server 2008 R2\Microsoft.SqlServer.SmoExtended.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DatabaseScripts.cs" />
     <Compile Include="Datasource\dsData.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -126,6 +133,82 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>dsQry.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\dsReport.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasource\Linq\dsLinqData.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsLinqData.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ConstraintsDailyDetailsEditDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\ConstraintsDailyDetailsEditDlg.Designer.cs">
+      <DependentUpon>ConstraintsDailyDetailsEditDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbleznsars2Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\tbleznsars2Frm.Designer.cs">
+      <DependentUpon>tbleznsars2Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbleznsars2EditDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\tbleznsars2EditDlg.Designer.cs">
+      <DependentUpon>tbleznsars2EditDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TBLkaznaFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\TBLkaznaFrm.Designer.cs">
+      <DependentUpon>TBLkaznaFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TBLkaznaEditDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\TBLkaznaEditDlg.Designer.cs">
+      <DependentUpon>TBLkaznaEditDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblraseedEditDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\tblraseedEditDlg.Designer.cs">
+      <DependentUpon>tblraseedEditDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tblraseedFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\tblraseedFrm.Designer.cs">
+      <DependentUpon>tblraseedFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\TBLCheekNumbersFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\TBLCheekNumbersFrm.Designer.cs">
+      <DependentUpon>TBLCheekNumbersFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbleznsarsEditDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\tbleznsarsEditDlg.Designer.cs">
+      <DependentUpon>tbleznsarsEditDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\tbleznsarsFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Data\tbleznsarsFrm.Designer.cs">
+      <DependentUpon>tbleznsarsFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main\WaitWindowFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main\WaitWindowFrm.designer.cs">
+      <DependentUpon>WaitWindowFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Removed\BillResitFrm.cs">
       <SubType>Form</SubType>
@@ -378,6 +461,80 @@
     <Compile Include="Queries\XRepBarCode.Designer.cs">
       <DependentUpon>XRepBarCode.cs</DependentUpon>
     </Compile>
+    <Compile Include="XRep\XRep03.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XRep\XRep03.designer.cs">
+      <DependentUpon>XRep03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XRep\XRep02.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XRep\XRep02.designer.cs">
+      <DependentUpon>XRep02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XRep\XRep01.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XRep\XRep01.designer.cs">
+      <DependentUpon>XRep01.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Data\tbleznsars2Frm.resx">
+      <DependentUpon>tbleznsars2Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\tbleznsars2EditDlg.resx">
+      <DependentUpon>tbleznsars2EditDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\TBLkaznaFrm.resx">
+      <DependentUpon>TBLkaznaFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\TBLkaznaEditDlg.resx">
+      <DependentUpon>TBLkaznaEditDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\tblraseedEditDlg.resx">
+      <DependentUpon>tblraseedEditDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\tblraseedFrm.resx">
+      <DependentUpon>tblraseedFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main\WaitWindowFrm.resx">
+      <DependentUpon>WaitWindowFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XRep\XRep03.resx">
+      <DependentUpon>XRep03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XRep\XRep02.resx">
+      <DependentUpon>XRep02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XRep\XRep01.resx">
+      <DependentUpon>XRep01.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Datasource\dsReport.xsc">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\dsReport.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsReport.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasource\dsReport.xss">
+      <DependentUpon>dsReport.xsd</DependentUpon>
+    </None>
+    <None Include="Datasource\Linq\dsLinqData.dbml.layout">
+      <DependentUpon>dsLinqData.dbml</DependentUpon>
+    </None>
+    <EmbeddedResource Include="Data\ConstraintsDailyDetailsEditDlg.resx">
+      <DependentUpon>ConstraintsDailyDetailsEditDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\TBLCheekNumbersFrm.resx">
+      <DependentUpon>TBLCheekNumbersFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\tbleznsarsEditDlg.resx">
+      <DependentUpon>tbleznsarsEditDlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\tbleznsarsFrm.resx">
+      <DependentUpon>tbleznsarsFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Removed\BillResitFrm.resx">
       <DependentUpon>BillResitFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -535,6 +692,11 @@
     <None Include="Datasource\dsQry.xss">
       <DependentUpon>dsQry.xsd</DependentUpon>
     </None>
+    <None Include="Datasource\Linq\dsLinqData.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dsLinqData.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -554,9 +716,19 @@
     <None Include="Resources\MSGBOX_Info.jpg" />
     <None Include="Resources\MSGBOX_Error.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="EgAccount.ico" />
+    <None Include="Resources\TBLkazna16.png" />
+    <None Include="Resources\tbleznsars216.png" />
+    <None Include="Resources\tblraseed16.png" />
+    <None Include="Resources\editname_16x16.png" />
+    <None Include="Resources\tbleznsars16.png" />
+    <None Include="Resources\cancel_16x16.png" />
+    <None Include="Resources\apply_16x16.png" />
+    <None Include="Resources\EgAccount.jpg" />
     <None Include="Resources\Print.png" />
     <None Include="Resources\Refresh.png" />
     <None Include="Resources\print.jpg" />

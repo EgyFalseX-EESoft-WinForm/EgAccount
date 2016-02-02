@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using DevExpress.LookAndFeel;
+using EgAccount.Data;
+using DevExpress.XtraSplashScreen;
 
 namespace EgAccount
 {
@@ -38,6 +40,11 @@ namespace EgAccount
         DataSellBillFrm FrmDataSellBill;
         DataSellBillBarCodeFrm FrmDataSellBillBarCode;
         DataTblPricelistsFrm FrmDataTblPricelists;
+        TBLCheekNumbersFrm FrmTBLCheekNumbers;
+        tbleznsarsFrm Frmtbleznsars;
+        tbleznsars2Frm Frmtbleznsars2;
+        tblraseedFrm Frmtblraseed;
+        TBLkaznaFrm FrmTBLkazna;
         //Queries
         QrysellsFrm FrmQrysells;
         QryBuysFrm FrmQryBuys;
@@ -73,6 +80,7 @@ namespace EgAccount
         }
         public void RebuildForms()
         {
+            return;
             //Codes
             FrmAccTreeOptions = new AccTreeOptionsFrm();
             FrmEditorYear = new EditorYearFrm();
@@ -96,6 +104,10 @@ namespace EgAccount
             FrmDataSellBill = new DataSellBillFrm();
             FrmDataSellBillBarCode = new DataSellBillBarCodeFrm();
             FrmDataTblPricelists = new DataTblPricelistsFrm();
+            FrmTBLCheekNumbers = new TBLCheekNumbersFrm();
+            Frmtbleznsars = new tbleznsarsFrm();
+            Frmtbleznsars2 = new tbleznsars2Frm();
+            Frmtblraseed = new tblraseedFrm();
             //Queries
             FrmQrysells = new QrysellsFrm();
             FrmQryBuys = new QryBuysFrm();
@@ -313,8 +325,7 @@ namespace EgAccount
         }
         private void accountsTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
-            if (FrmAccTypes.IsDisposed)
+            if (FrmAccTypes == null || FrmAccTypes.IsDisposed)
             {
                 FrmAccTypes = new AccTypesFrm();
                 FrmAccTypes.MdiParent = this;
@@ -337,7 +348,7 @@ namespace EgAccount
         }
         private void constraintsDailyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FrmConstraintsDaily.IsDisposed)
+            if (FrmConstraintsDaily == null || FrmConstraintsDaily.IsDisposed)
             {
                 FrmConstraintsDaily = new ConstraintsDailyFrm();
                 FrmConstraintsDaily.MdiParent = this;
@@ -360,7 +371,7 @@ namespace EgAccount
         }
         private void editorYearToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FrmEditorYear.IsDisposed)
+            if (FrmEditorYear == null || FrmEditorYear.IsDisposed)
             {
                 FrmEditorYear = new EditorYearFrm();
                 FrmEditorYear.MdiParent = this;
@@ -383,7 +394,7 @@ namespace EgAccount
         }
         private void editorAccountNatureToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FrmEditorAccountNature.IsDisposed)
+            if (FrmEditorAccountNature == null || FrmEditorAccountNature.IsDisposed)
             {
                 FrmEditorAccountNature = new EditorAccountNatureFrm();
                 FrmEditorAccountNature.MdiParent = this;
@@ -406,7 +417,7 @@ namespace EgAccount
         }
         private void banksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FrmEditorBank.IsDisposed)
+            if (FrmEditorBank == null || FrmEditorBank.IsDisposed)
             {
                 FrmEditorBank = new EditorBankFrm();
                 FrmEditorBank.MdiParent = this;
@@ -429,7 +440,7 @@ namespace EgAccount
         }
         private void editJobToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FrmEditorJob.IsDisposed)
+            if (FrmEditorJob == null || FrmEditorJob.IsDisposed)
             {
                 FrmEditorJob = new EditorJobFrm();
                 FrmEditorJob.MdiParent = this;
@@ -452,7 +463,7 @@ namespace EgAccount
         }
         private void editEmpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FrmDataEmp.IsDisposed)
+            if (FrmDataEmp == null || FrmDataEmp.IsDisposed)
             {
                 FrmDataEmp = new DataEmpFrm();
                 FrmDataEmp.MdiParent = this;
@@ -475,7 +486,7 @@ namespace EgAccount
         }
         private void prmEditorRoleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FrmEditorRole.IsDisposed)
+            if (FrmEditorRole == null || FrmEditorRole.IsDisposed)
             {
                 FrmEditorRole = new EditorRoleFrm();
                 FrmEditorRole.MdiParent = this;
@@ -498,7 +509,7 @@ namespace EgAccount
         }
         private void prmEditorRoleMenuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FrmEditorRoleMenu.IsDisposed)
+            if (FrmEditorRoleMenu == null || FrmEditorRoleMenu.IsDisposed)
             {
                 FrmEditorRoleMenu = new EditorRoleMenuFrm();
                 //FrmEditorRoleMenu.MdiParent = this;
@@ -523,7 +534,7 @@ namespace EgAccount
         }
         private void PremEditorUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FrmEditorUser.IsDisposed)
+            if (FrmEditorUser == null || FrmEditorUser.IsDisposed)
             {
                 FrmEditorUser = new EditorUserFrm();
                 FrmEditorUser.MdiParent = this;
@@ -546,7 +557,7 @@ namespace EgAccount
         }
         private void premEditorUserInRoleToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FrmEditorUserInRole.IsDisposed)
+            if (FrmEditorUserInRole == null || FrmEditorUserInRole.IsDisposed)
             {
                 FrmEditorUserInRole = new EditorUserInRoleFrm();
                 FrmEditorUserInRole.MdiParent = this;
@@ -569,7 +580,7 @@ namespace EgAccount
         }
         private void accTreeOptionsFrmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FrmAccTreeOptions.IsDisposed)
+            if (FrmAccTreeOptions == null || FrmAccTreeOptions.IsDisposed)
             {
                 FrmAccTreeOptions = new AccTreeOptionsFrm();
                 FrmAccTreeOptions.MdiParent = this;
@@ -592,7 +603,7 @@ namespace EgAccount
         }
         private void qrysellsFrmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FrmQrysells.IsDisposed)
+            if (FrmQrysells == null || FrmQrysells.IsDisposed)
             {
                 FrmQrysells = new QrysellsFrm();
                 FrmQrysells.MdiParent = this;
@@ -615,7 +626,7 @@ namespace EgAccount
         }
         private void qryQryBuysFrmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FrmQryBuys.IsDisposed)
+            if (FrmQryBuys == null || FrmQryBuys.IsDisposed)
             {
                 FrmQryBuys = new QryBuysFrm();
                 FrmQryBuys.MdiParent = this;
@@ -638,7 +649,7 @@ namespace EgAccount
         }
         private void skinsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (FrmSkins.IsDisposed)
+            if (FrmSkins == null || FrmSkins.IsDisposed)
             {
                 FrmSkins = new SkinsFrm();
                 FrmSkins.MdiParent = this;
@@ -690,7 +701,145 @@ namespace EgAccount
             FrmRepGeneral.rptSelectedIndex = (int)((ToolStripMenuItem)sender).Tag;
             FrmRepGeneral.Show();
         }
+        private void tBLCheekNumbersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (FrmTBLCheekNumbers == null || FrmTBLCheekNumbers.IsDisposed)
+            {
+                FrmTBLCheekNumbers = new TBLCheekNumbersFrm();
+                FrmTBLCheekNumbers.MdiParent = this;
+                FrmTBLCheekNumbers.Show();
+            }
+            else
+            {
+                if (FrmTBLCheekNumbers.Visible)
+                {
+                    FrmTBLCheekNumbers.WindowState = FormWindowState.Normal;
+                    FrmTBLCheekNumbers.Focus();
+                }
+                else
+                {
+                    FrmTBLCheekNumbers.MdiParent = this;
+                    FrmTBLCheekNumbers.Show();
+                }
+            }
+            FrmTBLCheekNumbers.Icon = MCls.MakeIcon(global::EgAccount.Properties.Resources.banks, 16, false);
+        }
+        private void tbleznsarsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Frmtbleznsars == null || Frmtbleznsars.IsDisposed)
+            {
+                Frmtbleznsars = new tbleznsarsFrm();
+                Frmtbleznsars.MdiParent = this;
+                Frmtbleznsars.Show();
+            }
+            else
+            {
+                if (Frmtbleznsars.Visible)
+                {
+                    Frmtbleznsars.WindowState = FormWindowState.Normal;
+                    Frmtbleznsars.Focus();
+                }
+                else
+                {
+                    Frmtbleznsars.MdiParent = this;
+                    Frmtbleznsars.Show();
+                }
+            }
+            Frmtbleznsars.Icon = MCls.MakeIcon(global::EgAccount.Properties.Resources.tbleznsars16, 16, false);
+        }
+        private void tblraseedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Frmtblraseed == null || Frmtblraseed.IsDisposed)
+            {
+                Frmtblraseed = new tblraseedFrm();
+                Frmtblraseed.MdiParent = this;
+                Frmtblraseed.Show();
+            }
+            else
+            {
+                if (Frmtblraseed.Visible)
+                {
+                    Frmtblraseed.WindowState = FormWindowState.Normal;
+                    Frmtblraseed.Focus();
+                }
+                else
+                {
+                    Frmtblraseed.MdiParent = this;
+                    Frmtblraseed.Show();
+                }
+            }
+            Frmtblraseed.Icon = MCls.MakeIcon(global::EgAccount.Properties.Resources.tblraseed16, 16, false);
+        }
+        private void tbleznsars2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (Frmtbleznsars2 == null || Frmtbleznsars2.IsDisposed)
+            {
+                Frmtbleznsars2 = new tbleznsars2Frm();
+                Frmtbleznsars2.MdiParent = this;
+                Frmtbleznsars2.Show();
+            }
+            else
+            {
+                if (Frmtbleznsars2.Visible)
+                {
+                    Frmtbleznsars2.WindowState = FormWindowState.Normal;
+                    Frmtbleznsars2.Focus();
+                }
+                else
+                {
+                    Frmtbleznsars2.MdiParent = this;
+                    Frmtbleznsars2.Show();
+                }
+            }
+            Frmtbleznsars2.Icon = MCls.MakeIcon(global::EgAccount.Properties.Resources.tbleznsars16, 16, false);
+        }
+        private void tBLkaznaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (FrmTBLkazna == null || FrmTBLkazna.IsDisposed)
+            {
+                FrmTBLkazna = new TBLkaznaFrm();
+                FrmTBLkazna.MdiParent = this;
+                FrmTBLkazna.Show();
+            }
+            else
+            {
+                if (FrmTBLkazna.Visible)
+                {
+                    FrmTBLkazna.WindowState = FormWindowState.Normal;
+                    FrmTBLkazna.Focus();
+                }
+                else
+                {
+                    FrmTBLkazna.MdiParent = this;
+                    FrmTBLkazna.Show();
+                }
+            }
+            FrmTBLkazna.Icon = MCls.MakeIcon(global::EgAccount.Properties.Resources.TBLkazna16, 16, false);
+        }
+        private void xrep01ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
 
+                XRep.XRep01 FrmRep = new XRep.XRep01();
+                MCls.ShowPrintPreview(FrmRep);
+            }));
+            SplashScreenManager.CloseForm();
+        }
+        private void xrep03ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+
+                XRep.XRep03 FrmRep = new XRep.XRep03();
+                MCls.ShowPrintPreview(FrmRep);
+            }));
+            SplashScreenManager.CloseForm();
+        }
         #endregion
+
+
     }
 }

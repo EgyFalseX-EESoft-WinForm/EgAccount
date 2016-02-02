@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.SqlClient;
+using System.Linq;
 
 namespace EgAccount
 {
@@ -16,10 +17,13 @@ namespace EgAccount
         DataTable ConsDetials = new DataTable("FalseX");
         DataTable ConsDelDetials = new DataTable("FalseX");
         DataTable ConsTbl = new DataTable("ConsTable");
+        Datasource.Linq.dsLinqDataDataContext dsLinq = new Datasource.Linq.dsLinqDataDataContext();
         Datasource.dsQryTableAdapters.QueriesTableAdapter adpQ = new Datasource.dsQryTableAdapters.QueriesTableAdapter();
         public ConstraintsDailyFrm()
         {
             InitializeComponent();
+            XPSCSData.Session.ConnectionString = Properties.Settings.Default.EGAccountConnectionString;
+            LSMSCDYeras.QueryableSource = dsLinq.CDYeras;
             ConsDetials.Columns.Add("Madeen", typeof(int));
             ConsDetials.Columns.Add("Daien", typeof(int));
             ConsDetials.Columns.Add("AccountName");
@@ -47,6 +51,13 @@ namespace EgAccount
             GroupControlAdding.Enabled = false;
             GCGeneralCons.Enabled = true;
 
+        }
+        private void ReloadEditGrid()
+        {
+            XPSCSData.Session.DropChanges();
+            XPSCSData.Session.DropIdentityMap();
+            XPSCSData.Reload();
+            gridViewEdit.RefreshData();
         }
         private void ConstraintsDailyFrm_Load(object sender, EventArgs e)
         {
@@ -262,6 +273,59 @@ namespace EgAccount
                 MessageBox.Show(ex.Message,ex.ErrorCode.ToString());
             }
             Con.Close();
+        }
+
+        private void repositoryItemButtonEditEdit_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            DevExpress.Xpo.Metadata.XPDataTableObject row = (DevExpress.Xpo.Metadata.XPDataTableObject)gridViewEdit.GetRow(gridViewEdit.FocusedRowHandle);
+            bool tarhel = (bool)MCls.adpQ.GetTarhelByTRANSID(Convert.ToInt32(row.GetMemberValue("TRANSID")));
+            if (tarhel == true)
+            {
+                MessageBox.Show("لا يمكن تعديل قيد تم ترحيلة", "لا يمكن التعديل", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (MessageBox.Show("هل انت متأكد؟", "تحزير", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                return;
+            row.SetMemberValue("userin", Convert.ToInt32(MCls.UserInfo.UserID));
+            row.SetMemberValue("datein", MCls.adpQ.ServerDatetime());
+            row.Save();
+            UOWData.Save(row);
+            UOWData.CommitChanges();
+        }
+        private void repositoryItemButtonEditDel_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            DevExpress.Xpo.Metadata.XPDataTableObject row = (DevExpress.Xpo.Metadata.XPDataTableObject)gridViewEdit.GetRow(gridViewEdit.FocusedRowHandle);
+            bool tarhel = (bool)MCls.adpQ.GetTarhelByTRANSID(Convert.ToInt32(row.GetMemberValue("TRANSID")));
+            if (tarhel == true)
+            {
+                MessageBox.Show("لا يمكن تعديل قيد تم ترحيلة", "لا يمكن التعديل", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (MessageBox.Show("هل انت متأكد؟", "تحزير", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                return;
+            //DevExpress.Xpo.Metadata.XPDataTableObject row = (DevExpress.Xpo.Metadata.XPDataTableObject)gridViewEdit.GetRow(gridViewEdit.FocusedRowHandle);
+            UOWData.Delete(row);
+            gridViewEdit.DeleteRow(gridViewEdit.FocusedRowHandle);
+            UOWData.CommitChanges();
+        }
+        private void repositoryItemButtonEditDetails_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            DevExpress.Xpo.Metadata.XPDataTableObject row = (DevExpress.Xpo.Metadata.XPDataTableObject)gridViewEdit.GetRow(gridViewEdit.FocusedRowHandle);
+            Data.ConstraintsDailyDetailsEditDlg dlg = new Data.ConstraintsDailyDetailsEditDlg(Convert.ToInt32(row.GetMemberValue("TRANSID")));
+            if (dlg.ShowDialog() == DialogResult.OK)
+            {
+                MessageBox.Show("تم تعديل تفاصيل القيد", " تم التعديل", MessageBoxButtons.OK,  MessageBoxIcon.Information);
+                return;
+            }
+
+        }
+
+        private void xtraTabControlMain_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            if (e.Page == xtraTabPageEdit)
+            {
+                ReloadEditGrid();
+            }
         }
     }
 }
