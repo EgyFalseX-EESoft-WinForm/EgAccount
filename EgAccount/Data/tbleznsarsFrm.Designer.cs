@@ -58,13 +58,13 @@
             this.colezndate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gcPrint = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemButtonEditPrint = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
+            this.colshow = new DevExpress.XtraGrid.Columns.GridColumn();
             this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.adp = new EgAccount.Datasource.dsDataTableAdapters.tbleznsarsTableAdapter();
-            this.colshow = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlData)).BeginInit();
@@ -143,6 +143,8 @@
             this.gridViewData.OptionsView.ColumnAutoWidth = false;
             this.gridViewData.OptionsView.ShowFooter = true;
             this.gridViewData.OptionsView.ShowGroupPanel = false;
+            this.gridViewData.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.coleznsarfno, DevExpress.Data.ColumnSortOrder.Descending)});
             // 
             // coleznsarfno
             // 
@@ -422,6 +424,18 @@
             this.repositoryItemButtonEditPrint.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditPrint.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditPrint_ButtonClick);
             // 
+            // colshow
+            // 
+            this.colshow.AppearanceCell.Options.UseTextOptions = true;
+            this.colshow.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colshow.AppearanceHeader.Options.UseTextOptions = true;
+            this.colshow.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colshow.Caption = "يظهر للخزينة ";
+            this.colshow.FieldName = "show";
+            this.colshow.Name = "colshow";
+            this.colshow.Visible = true;
+            this.colshow.VisibleIndex = 15;
+            // 
             // btnAdd
             // 
             this.btnAdd.Image = global::EgAccount.Properties.Resources.apply_16x16;
@@ -475,18 +489,6 @@
             // adp
             // 
             this.adp.ClearBeforeFill = true;
-            // 
-            // colshow
-            // 
-            this.colshow.AppearanceCell.Options.UseTextOptions = true;
-            this.colshow.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colshow.AppearanceHeader.Options.UseTextOptions = true;
-            this.colshow.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colshow.Caption = "يظهر للخزينة ";
-            this.colshow.FieldName = "show";
-            this.colshow.Name = "colshow";
-            this.colshow.Visible = true;
-            this.colshow.VisibleIndex = 15;
             // 
             // tbleznsarsFrm
             // 

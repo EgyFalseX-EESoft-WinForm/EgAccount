@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.btnCancel = new DevExpress.XtraEditors.SimpleButton();
             this.btnSave = new DevExpress.XtraEditors.SimpleButton();
             this.gridControlData = new DevExpress.XtraGrid.GridControl();
-            this.tBLTRAANSDETAILSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tBLTRAANSDETAILSBindingSource = new System.Windows.Forms.BindingSource();
             this.dsData = new EgAccount.Datasource.dsData();
             this.gridViewData = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colAccountId = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTreeListLookUpEditAccountId = new DevExpress.XtraEditors.Repository.RepositoryItemTreeListLookUpEdit();
-            this.tBLAccountesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tBLAccountesBindingSource = new System.Windows.Forms.BindingSource();
             this.repositoryItemTreeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
             this.colAccountDes = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.colaznsarf = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -53,7 +52,7 @@
             this.repositoryItemButtonEditDel = new DevExpress.XtraEditors.Repository.RepositoryItemButtonEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lciSave = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.tBLTRAANSDETAILSTableAdapter = new EgAccount.Datasource.dsDataTableAdapters.TBLTRAANSDETAILSTableAdapter();
             this.tBL_AccountesTableAdapter = new EgAccount.Datasource.dsDataTableAdapters.TBL_AccountesTableAdapter();
@@ -70,7 +69,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +81,7 @@
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(0, 0);
             this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(606, 375, 250, 350);
             this.layoutControl1.Root = this.layoutControlGroup1;
             this.layoutControl1.Size = new System.Drawing.Size(684, 361);
             this.layoutControl1.TabIndex = 0;
@@ -341,10 +341,10 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlItem2,
+            this.lciSave,
             this.layoutControlItem3});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.Size = new System.Drawing.Size(684, 361);
             this.layoutControlGroup1.TextVisible = false;
             // 
@@ -357,14 +357,14 @@
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
-            // layoutControlItem2
+            // lciSave
             // 
-            this.layoutControlItem2.Control = this.btnSave;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 315);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(466, 26);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
+            this.lciSave.Control = this.btnSave;
+            this.lciSave.Location = new System.Drawing.Point(0, 315);
+            this.lciSave.Name = "lciSave";
+            this.lciSave.Size = new System.Drawing.Size(466, 26);
+            this.lciSave.TextSize = new System.Drawing.Size(0, 0);
+            this.lciSave.TextVisible = false;
             // 
             // layoutControlItem3
             // 
@@ -407,7 +407,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEditDel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lciSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
 
@@ -422,7 +422,7 @@
         private DevExpress.XtraGrid.GridControl gridControlData;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewData;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.LayoutControlItem lciSave;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private Datasource.dsData dsData;
         private System.Windows.Forms.BindingSource tBLTRAANSDETAILSBindingSource;

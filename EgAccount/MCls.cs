@@ -191,6 +191,111 @@ namespace EgAccount
                 }
             }
         }
+        public static string DecimalToWords(decimal number)
+        {
+            if (number == 0)
+                return "صفر";
+
+            if (number < 0)
+                return "سالب " + DecimalToWords(Math.Abs(number));
+
+            string words = "";
+
+            int intPortion = (int)number;
+            decimal fraction = (number - intPortion) * 100;
+            int decPortion = (int)fraction;
+
+            words = NumberToWords(intPortion);
+            words += " جنيها";
+            if (decPortion > 0)
+            {
+                words += " و ";
+                words += NumberToWords(decPortion);
+                words += " قرشا";
+            }
+            return words;
+        }
+        private static string NumberToWords(int number)
+        {
+            if (number == 0)
+                return "صفر";
+
+            if (number < 0)
+                return "سالب " + NumberToWords(Math.Abs(number));
+
+            string words = "";
+
+            if ((number / 1000000) > 0)
+            {
+                string result = NumberToWords(number / 1000000);
+                if (result == "واحد")
+                    words += " مليون ";
+                else if (result == "اثنان")
+                    words += " مليونين ";
+                else
+                    words += result + " ملايين ";
+                //words += " و ";
+                number %= 1000000;
+            }
+
+            if ((number / 1000) > 0)
+            {
+                string result = NumberToWords(number / 1000);
+                if (result == "واحد")
+                    words += " ألف ";
+                else if (result == "اثنان")
+                    words += " ألفين ";
+                else
+                    words += result + " ألاف ";
+                //words += " و ";
+                number %= 1000;
+            }
+
+            if ((number / 100) > 0)
+            {
+                string result = NumberToWords(number / 100);
+                if (result == "واحد")
+                    words += " مائة ";
+                else if (result == "اثنان")
+                    words += " مائتين ";
+                else if (result == "ثلاثة")
+                    words += " ثلاثمائة ";
+                else if (result == "اربعة")
+                    words += " اربعمائة ";
+                else if (result == "خمسة")
+                    words += " خمسمائة ";
+                else if (result == "ستة")
+                    words += " ستمائة ";
+                else if (result == "سبعة")
+                    words += " سابعمائة ";
+                else if (result == "ثمانية")
+                    words += " ثمانمائة ";
+                else if (result == "تسعة")
+                    words += " تسعمائة ";
+                //words += " و ";
+                number %= 100;
+            }
+
+            if (number > 0)
+            {
+                if (words != "")
+                    words += "و ";
+
+                var unitsMap = new[] { "صفر", "واحد", "اثنان", "ثلاثة", "اربعة", "خمسة", "ستة", "سبعة", "ثمانية", "تسعة", "عشرة", "أحدي عشر", "اثني عشر", "ثلاث عشر", "اربعة عشر", "خمسة عشر", "ستة عشر", "سبعة عشر", "ثمانية عشر", "تسعة عشر" };
+                var tensMap = new[] { "صفر", "عشرة", "عشرين", "ثلاثون", "اربعون", "خمسون", "ستون", "سبعون", "ثمانون", "تسعون" };
+
+                if (number < 20)
+                    words += unitsMap[number];
+                else
+                {
+                    
+                    if ((number % 10) > 0)
+                        words += unitsMap[number % 10] + "و";
+                    words += tensMap[number / 10];
+                }
+            }
+            return words;
+        }
         //Database
       
         public static void PrepareBaseRole(MenuStrip menu)

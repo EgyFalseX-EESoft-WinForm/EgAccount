@@ -21,10 +21,22 @@ namespace EgAccount.XRep
             MCls.SetAllCommandTimeouts(adpRep, 0);
             adpRep.Fill(dsReport.XRep02, row.TRANSID);
             xrleznsarfno.Text = row.eznsarfno.ToString();
+            if (dsReport.XRep02.Count > 0)
+                lblFromAcc.Text = dsReport.XRep02[0].AccountDes;
             double Dain = 0;
             foreach (Datasource.dsReport.XRep02Row item in dsReport.XRep02)
+            {
                 Dain += item.Daien;
-            xrlTotalDaien.Text = Dain.ToString();
+                if (item.Madeen != 0)
+                {
+                    item.AccountDes = "من ح/ " + item.AccountDes;
+                }
+                else
+                {
+                    item.AccountDes = "الي ح/ " + item.AccountDes;
+                }
+            }
+            xrlTotalDaien.Text = MCls.DecimalToWords(Convert.ToDecimal(Dain));
             xrlezndes.Text = row.ezndes;
             xrlmostafeed.Text = row.mostafeed;
             xrlTRANSID.Text = row.TRANSID.ToString();
@@ -32,6 +44,7 @@ namespace EgAccount.XRep
             xrlCheekNumber.Text = row.CheekNumber.ToString();
             if (row.ezndate != null)
                 xrlezndate.Text = row.ezndate.Value.ToShortDateString();
+            
         }
         private void LoadDataSource()
         {

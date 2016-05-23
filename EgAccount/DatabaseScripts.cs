@@ -72,6 +72,14 @@ namespace EgAccount
                 }
                 cmd.CommandText = vTBLkazna;
                 cmd.ExecuteNonQuery();
+                //vTBLTRAANSDETAILS
+                if (CheckViewExists("vTBLTRAANSDETAILS"))
+                {
+                    cmd.CommandText = DropObject("vTBLTRAANSDETAILS");
+                    cmd.ExecuteNonQuery();
+                }
+                cmd.CommandText = vTBLTRAANSDETAILS;
+                cmd.ExecuteNonQuery();
 
             }
             catch (SqlException ex)
@@ -216,6 +224,25 @@ FROM            dbo.TBLkazna INNER JOIN
                          dbo.CDkaznatype ON dbo.TBLkazna.kaznatypeid = dbo.CDkaznatype.kaznatypeid INNER JOIN
                          dbo.Users ON dbo.TBLkazna.userin = dbo.Users.UserID INNER JOIN
                          dbo.TBL_Accountes ON dbo.TBLkazna.acountid = dbo.TBL_Accountes.AccountId";
+            }
+        }
+        public static string vTBLTRAANSDETAILS
+        {
+            get
+            {
+                return @"
+                CREATE VIEW [dbo].[vTBLTRAANSDETAILS]
+                AS
+                SELECT        dbo.TBLTRANSACTION.TRANSID, dbo.TBLTRANSACTION.YearID, dbo.CDYeras.YearName, dbo.TBLTRANSACTION.KIEDDATE, dbo.TBLTRANSACTION.KIEDDESC, dbo.TBLTRAANSDETAILS.AccountId, 
+                         dbo.TBLTRAANSDETAILS.Madeen, dbo.TBLTRAANSDETAILS.Daien, dbo.TBLTRAANSDETAILS.kieddes, dbo.TBL_Accountes.AccountDes, dbo.CDAccountNature.AccNatueName, 
+                         dbo.TBLTRAANSDETAILS.MostandNo, dbo.TBLTRAANSDETAILS.TNO, dbo.TBLTRANSACTION.KIEDNO, dbo.TBLTRANSACTION.KIEDDAFTRYNO, dbo.TBLTRANSACTION.trhel, dbo.TBLTRANSACTION.userin, 
+                         dbo.TBLTRANSACTION.datein, dbo.Users.UserName
+FROM            dbo.Users RIGHT OUTER JOIN
+                         dbo.TBLTRANSACTION INNER JOIN
+                         dbo.TBLTRAANSDETAILS ON dbo.TBLTRANSACTION.TRANSID = dbo.TBLTRAANSDETAILS.TRANSID ON dbo.Users.UserID = dbo.TBLTRANSACTION.userin LEFT OUTER JOIN
+                         dbo.CDAccountNature RIGHT OUTER JOIN
+                         dbo.TBL_Accountes ON dbo.CDAccountNature.AccNatueID = dbo.TBL_Accountes.AccNatueID ON dbo.TBLTRAANSDETAILS.AccountId = dbo.TBL_Accountes.AccountId LEFT OUTER JOIN
+                         dbo.CDYeras ON dbo.TBLTRANSACTION.YearID = dbo.CDYeras.YearID";
             }
         }
 

@@ -49,6 +49,10 @@ namespace EgAccount
 
         private void TLAccNames_FocusedNodeChanged(object sender, DevExpress.XtraTreeList.FocusedNodeChangedEventArgs e)
         {
+            if (TLAccNames.Selection[0].Id < 0)
+            {
+                return;
+            }
             if ((string)TLAccNames.Selection[0].GetValue(1).ToString() != "0")
                 BtnOk.Enabled = true;
             else

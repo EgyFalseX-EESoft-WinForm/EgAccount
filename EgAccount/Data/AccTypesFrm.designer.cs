@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AccTypesFrm));
+            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule5 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule1 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule2 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule3 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
-            DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule conditionValidationRule4 = new DevExpress.XtraEditors.DXErrorProvider.ConditionValidationRule();
             this.TreeListAcc = new DevExpress.XtraTreeList.TreeList();
             this.treeListColumn1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn6 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
@@ -47,7 +46,7 @@
             this.repositoryItemCheckEditaznsarf = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.treeListColumn7 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.treeListColumn9 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
-            this.imageCollectionNodes = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollectionNodes = new DevExpress.Utils.ImageCollection();
             this.GCCodes = new DevExpress.XtraEditors.GroupControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.LlHyCode = new DevExpress.XtraEditors.LabelControl();
@@ -73,7 +72,7 @@
             this.tbL_AccountesTableAdapter = new EgAccount.Datasource.dsDataTableAdapters.TBL_AccountesTableAdapter();
             this.dsData = new EgAccount.Datasource.dsData();
             this.queriesTableAdapter = new EgAccount.Datasource.dsQryTableAdapters.QueriesTableAdapter();
-            this.dxvp = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider(this.components);
+            this.dxvp = new DevExpress.XtraEditors.DXErrorProvider.DXValidationProvider();
             ((System.ComponentModel.ISupportInitialize)(this.TreeListAcc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemButtonEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEditaznsarf)).BeginInit();
@@ -108,6 +107,7 @@
             this.treeListColumn8,
             this.treeListColumn7,
             this.treeListColumn9});
+            this.TreeListAcc.Cursor = System.Windows.Forms.Cursors.Default;
             this.TreeListAcc.Location = new System.Drawing.Point(10, 12);
             this.TreeListAcc.Name = "TreeListAcc";
             this.TreeListAcc.BeginUnboundLoad();
@@ -126,6 +126,7 @@
             this.TreeListAcc.OptionsBehavior.PopulateServiceColumns = true;
             this.TreeListAcc.OptionsLayout.AddNewColumns = false;
             this.TreeListAcc.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.TreeListAcc.OptionsView.AutoWidth = false;
             this.TreeListAcc.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemButtonEdit1,
             this.repositoryItemCheckEditaznsarf});
@@ -144,7 +145,7 @@
             this.treeListColumn1.Name = "treeListColumn1";
             this.treeListColumn1.Visible = true;
             this.treeListColumn1.VisibleIndex = 0;
-            this.treeListColumn1.Width = 117;
+            this.treeListColumn1.Width = 171;
             // 
             // treeListColumn6
             // 
@@ -163,13 +164,13 @@
             this.treeListColumn2.Name = "treeListColumn2";
             this.treeListColumn2.Visible = true;
             this.treeListColumn2.VisibleIndex = 2;
-            this.treeListColumn2.Width = 101;
+            this.treeListColumn2.Width = 129;
             // 
             // repositoryItemButtonEdit1
             // 
             this.repositoryItemButtonEdit1.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
             this.repositoryItemButtonEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK, "حفظ", 30, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.OK, "حفظ", 30, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, null, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.repositoryItemButtonEdit1.MaxLength = 150;
             this.repositoryItemButtonEdit1.Name = "repositoryItemButtonEdit1";
             // 
@@ -331,10 +332,10 @@
             this.ceaznsarf.Properties.Caption = "اذن صرف";
             this.ceaznsarf.Size = new System.Drawing.Size(75, 19);
             this.ceaznsarf.TabIndex = 3;
-            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule1.ErrorText = "This value is not valid";
-            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxvp.SetValidationRule(this.ceaznsarf, conditionValidationRule1);
+            conditionValidationRule5.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule5.ErrorText = "This value is not valid";
+            conditionValidationRule5.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxvp.SetValidationRule(this.ceaznsarf, conditionValidationRule5);
             // 
             // LUEAccEndCount
             // 
@@ -351,10 +352,10 @@
             this.LUEAccEndCount.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.LUEAccEndCount.Size = new System.Drawing.Size(187, 20);
             this.LUEAccEndCount.TabIndex = 4;
-            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule2.ErrorText = "This value is not valid";
-            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxvp.SetValidationRule(this.LUEAccEndCount, conditionValidationRule2);
+            conditionValidationRule1.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule1.ErrorText = "This value is not valid";
+            conditionValidationRule1.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxvp.SetValidationRule(this.LUEAccEndCount, conditionValidationRule1);
             // 
             // LUEAccType
             // 
@@ -370,10 +371,10 @@
             this.LUEAccType.Properties.NullValuePrompt = "اختار طبيعة";
             this.LUEAccType.Size = new System.Drawing.Size(187, 20);
             this.LUEAccType.TabIndex = 2;
-            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule3.ErrorText = "This value is not valid";
-            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxvp.SetValidationRule(this.LUEAccType, conditionValidationRule3);
+            conditionValidationRule2.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule2.ErrorText = "This value is not valid";
+            conditionValidationRule2.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxvp.SetValidationRule(this.LUEAccType, conditionValidationRule2);
             // 
             // TxtBudge
             // 
@@ -396,10 +397,10 @@
             this.TxtAccName.Properties.MaxLength = 150;
             this.TxtAccName.Size = new System.Drawing.Size(187, 20);
             this.TxtAccName.TabIndex = 1;
-            conditionValidationRule4.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
-            conditionValidationRule4.ErrorText = "This value is not valid";
-            conditionValidationRule4.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
-            this.dxvp.SetValidationRule(this.TxtAccName, conditionValidationRule4);
+            conditionValidationRule3.ConditionOperator = DevExpress.XtraEditors.DXErrorProvider.ConditionOperator.IsNotBlank;
+            conditionValidationRule3.ErrorText = "This value is not valid";
+            conditionValidationRule3.ErrorType = DevExpress.XtraEditors.DXErrorProvider.ErrorType.Critical;
+            this.dxvp.SetValidationRule(this.TxtAccName, conditionValidationRule3);
             this.TxtAccName.EditValueChanged += new System.EventHandler(this.TxtAccName_EditValueChanged);
             // 
             // labelControl10

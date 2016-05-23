@@ -66,6 +66,9 @@ namespace EgAccount.Datasource.Linq
     partial void InsertCDkaznatype(CDkaznatype instance);
     partial void UpdateCDkaznatype(CDkaznatype instance);
     partial void DeleteCDkaznatype(CDkaznatype instance);
+    partial void InsertvTBLTRAANSDETAIL(vTBLTRAANSDETAIL instance);
+    partial void UpdatevTBLTRAANSDETAIL(vTBLTRAANSDETAIL instance);
+    partial void DeletevTBLTRAANSDETAIL(vTBLTRAANSDETAIL instance);
     #endregion
 		
 		public dsLinqDataDataContext() : 
@@ -191,6 +194,14 @@ namespace EgAccount.Datasource.Linq
 			get
 			{
 				return this.GetTable<CDkaznatype>();
+			}
+		}
+		
+		public System.Data.Linq.Table<vTBLTRAANSDETAIL> vTBLTRAANSDETAILs
+		{
+			get
+			{
+				return this.GetTable<vTBLTRAANSDETAIL>();
 			}
 		}
 	}
@@ -3170,6 +3181,500 @@ namespace EgAccount.Datasource.Linq
 					this._kaznatype = value;
 					this.SendPropertyChanged("kaznatype");
 					this.OnkaznatypeChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.vTBLTRAANSDETAILS")]
+	public partial class vTBLTRAANSDETAIL : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _TRANSID;
+		
+		private byte _YearID;
+		
+		private string _YearName;
+		
+		private System.Nullable<System.DateTime> _KIEDDATE;
+		
+		private string _KIEDDESC;
+		
+		private int _AccountId;
+		
+		private System.Nullable<double> _Madeen;
+		
+		private System.Nullable<double> _Daien;
+		
+		private string _kieddes;
+		
+		private string _AccountDes;
+		
+		private string _AccNatueName;
+		
+		private string _MostandNo;
+		
+		private byte _TNO;
+		
+		private System.Nullable<int> _KIEDNO;
+		
+		private System.Nullable<int> _KIEDDAFTRYNO;
+		
+		private System.Nullable<bool> _trhel;
+		
+		private int _userin;
+		
+		private System.DateTime _datein;
+		
+		private string _UserName;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTRANSIDChanging(int value);
+    partial void OnTRANSIDChanged();
+    partial void OnYearIDChanging(byte value);
+    partial void OnYearIDChanged();
+    partial void OnYearNameChanging(string value);
+    partial void OnYearNameChanged();
+    partial void OnKIEDDATEChanging(System.Nullable<System.DateTime> value);
+    partial void OnKIEDDATEChanged();
+    partial void OnKIEDDESCChanging(string value);
+    partial void OnKIEDDESCChanged();
+    partial void OnAccountIdChanging(int value);
+    partial void OnAccountIdChanged();
+    partial void OnMadeenChanging(System.Nullable<double> value);
+    partial void OnMadeenChanged();
+    partial void OnDaienChanging(System.Nullable<double> value);
+    partial void OnDaienChanged();
+    partial void OnkieddesChanging(string value);
+    partial void OnkieddesChanged();
+    partial void OnAccountDesChanging(string value);
+    partial void OnAccountDesChanged();
+    partial void OnAccNatueNameChanging(string value);
+    partial void OnAccNatueNameChanged();
+    partial void OnMostandNoChanging(string value);
+    partial void OnMostandNoChanged();
+    partial void OnTNOChanging(byte value);
+    partial void OnTNOChanged();
+    partial void OnKIEDNOChanging(System.Nullable<int> value);
+    partial void OnKIEDNOChanged();
+    partial void OnKIEDDAFTRYNOChanging(System.Nullable<int> value);
+    partial void OnKIEDDAFTRYNOChanged();
+    partial void OntrhelChanging(System.Nullable<bool> value);
+    partial void OntrhelChanged();
+    partial void OnuserinChanging(int value);
+    partial void OnuserinChanged();
+    partial void OndateinChanging(System.DateTime value);
+    partial void OndateinChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    #endregion
+		
+		public vTBLTRAANSDETAIL()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TRANSID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int TRANSID
+		{
+			get
+			{
+				return this._TRANSID;
+			}
+			set
+			{
+				if ((this._TRANSID != value))
+				{
+					this.OnTRANSIDChanging(value);
+					this.SendPropertyChanging();
+					this._TRANSID = value;
+					this.SendPropertyChanged("TRANSID");
+					this.OnTRANSIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YearID", DbType="TinyInt NOT NULL")]
+		public byte YearID
+		{
+			get
+			{
+				return this._YearID;
+			}
+			set
+			{
+				if ((this._YearID != value))
+				{
+					this.OnYearIDChanging(value);
+					this.SendPropertyChanging();
+					this._YearID = value;
+					this.SendPropertyChanged("YearID");
+					this.OnYearIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_YearName", DbType="NVarChar(30)")]
+		public string YearName
+		{
+			get
+			{
+				return this._YearName;
+			}
+			set
+			{
+				if ((this._YearName != value))
+				{
+					this.OnYearNameChanging(value);
+					this.SendPropertyChanging();
+					this._YearName = value;
+					this.SendPropertyChanged("YearName");
+					this.OnYearNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KIEDDATE", DbType="DateTime")]
+		public System.Nullable<System.DateTime> KIEDDATE
+		{
+			get
+			{
+				return this._KIEDDATE;
+			}
+			set
+			{
+				if ((this._KIEDDATE != value))
+				{
+					this.OnKIEDDATEChanging(value);
+					this.SendPropertyChanging();
+					this._KIEDDATE = value;
+					this.SendPropertyChanged("KIEDDATE");
+					this.OnKIEDDATEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KIEDDESC", DbType="NVarChar(100)")]
+		public string KIEDDESC
+		{
+			get
+			{
+				return this._KIEDDESC;
+			}
+			set
+			{
+				if ((this._KIEDDESC != value))
+				{
+					this.OnKIEDDESCChanging(value);
+					this.SendPropertyChanging();
+					this._KIEDDESC = value;
+					this.SendPropertyChanged("KIEDDESC");
+					this.OnKIEDDESCChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountId", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int AccountId
+		{
+			get
+			{
+				return this._AccountId;
+			}
+			set
+			{
+				if ((this._AccountId != value))
+				{
+					this.OnAccountIdChanging(value);
+					this.SendPropertyChanging();
+					this._AccountId = value;
+					this.SendPropertyChanged("AccountId");
+					this.OnAccountIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Madeen", DbType="Float")]
+		public System.Nullable<double> Madeen
+		{
+			get
+			{
+				return this._Madeen;
+			}
+			set
+			{
+				if ((this._Madeen != value))
+				{
+					this.OnMadeenChanging(value);
+					this.SendPropertyChanging();
+					this._Madeen = value;
+					this.SendPropertyChanged("Madeen");
+					this.OnMadeenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Daien", DbType="Float")]
+		public System.Nullable<double> Daien
+		{
+			get
+			{
+				return this._Daien;
+			}
+			set
+			{
+				if ((this._Daien != value))
+				{
+					this.OnDaienChanging(value);
+					this.SendPropertyChanging();
+					this._Daien = value;
+					this.SendPropertyChanged("Daien");
+					this.OnDaienChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_kieddes", DbType="NVarChar(50)")]
+		public string kieddes
+		{
+			get
+			{
+				return this._kieddes;
+			}
+			set
+			{
+				if ((this._kieddes != value))
+				{
+					this.OnkieddesChanging(value);
+					this.SendPropertyChanging();
+					this._kieddes = value;
+					this.SendPropertyChanged("kieddes");
+					this.OnkieddesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccountDes", DbType="NVarChar(150)")]
+		public string AccountDes
+		{
+			get
+			{
+				return this._AccountDes;
+			}
+			set
+			{
+				if ((this._AccountDes != value))
+				{
+					this.OnAccountDesChanging(value);
+					this.SendPropertyChanging();
+					this._AccountDes = value;
+					this.SendPropertyChanged("AccountDes");
+					this.OnAccountDesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AccNatueName", DbType="NVarChar(20)")]
+		public string AccNatueName
+		{
+			get
+			{
+				return this._AccNatueName;
+			}
+			set
+			{
+				if ((this._AccNatueName != value))
+				{
+					this.OnAccNatueNameChanging(value);
+					this.SendPropertyChanging();
+					this._AccNatueName = value;
+					this.SendPropertyChanged("AccNatueName");
+					this.OnAccNatueNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MostandNo", DbType="NVarChar(50)")]
+		public string MostandNo
+		{
+			get
+			{
+				return this._MostandNo;
+			}
+			set
+			{
+				if ((this._MostandNo != value))
+				{
+					this.OnMostandNoChanging(value);
+					this.SendPropertyChanging();
+					this._MostandNo = value;
+					this.SendPropertyChanged("MostandNo");
+					this.OnMostandNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TNO", DbType="TinyInt NOT NULL")]
+		public byte TNO
+		{
+			get
+			{
+				return this._TNO;
+			}
+			set
+			{
+				if ((this._TNO != value))
+				{
+					this.OnTNOChanging(value);
+					this.SendPropertyChanging();
+					this._TNO = value;
+					this.SendPropertyChanged("TNO");
+					this.OnTNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KIEDNO", DbType="Int")]
+		public System.Nullable<int> KIEDNO
+		{
+			get
+			{
+				return this._KIEDNO;
+			}
+			set
+			{
+				if ((this._KIEDNO != value))
+				{
+					this.OnKIEDNOChanging(value);
+					this.SendPropertyChanging();
+					this._KIEDNO = value;
+					this.SendPropertyChanged("KIEDNO");
+					this.OnKIEDNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_KIEDDAFTRYNO", DbType="Int")]
+		public System.Nullable<int> KIEDDAFTRYNO
+		{
+			get
+			{
+				return this._KIEDDAFTRYNO;
+			}
+			set
+			{
+				if ((this._KIEDDAFTRYNO != value))
+				{
+					this.OnKIEDDAFTRYNOChanging(value);
+					this.SendPropertyChanging();
+					this._KIEDDAFTRYNO = value;
+					this.SendPropertyChanged("KIEDDAFTRYNO");
+					this.OnKIEDDAFTRYNOChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_trhel", DbType="Bit")]
+		public System.Nullable<bool> trhel
+		{
+			get
+			{
+				return this._trhel;
+			}
+			set
+			{
+				if ((this._trhel != value))
+				{
+					this.OntrhelChanging(value);
+					this.SendPropertyChanging();
+					this._trhel = value;
+					this.SendPropertyChanged("trhel");
+					this.OntrhelChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_userin", DbType="Int NOT NULL")]
+		public int userin
+		{
+			get
+			{
+				return this._userin;
+			}
+			set
+			{
+				if ((this._userin != value))
+				{
+					this.OnuserinChanging(value);
+					this.SendPropertyChanging();
+					this._userin = value;
+					this.SendPropertyChanged("userin");
+					this.OnuserinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_datein", DbType="DateTime NOT NULL")]
+		public System.DateTime datein
+		{
+			get
+			{
+				return this._datein;
+			}
+			set
+			{
+				if ((this._datein != value))
+				{
+					this.OndateinChanging(value);
+					this.SendPropertyChanging();
+					this._datein = value;
+					this.SendPropertyChanged("datein");
+					this.OndateinChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(50)")]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
 				}
 			}
 		}

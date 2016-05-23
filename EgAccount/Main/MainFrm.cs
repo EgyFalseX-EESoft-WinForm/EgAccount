@@ -838,8 +838,50 @@ namespace EgAccount
             }));
             SplashScreenManager.CloseForm();
         }
+        private void xrep04ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+
+                XRep.XRep04 FrmRep = new XRep.XRep04();
+                MCls.ShowPrintPreview(FrmRep);
+            }));
+            SplashScreenManager.CloseForm();
+        }
+        private void xrep05ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+
+                XRep.XRep05 FrmRep = new XRep.XRep05();
+                MCls.ShowPrintPreview(FrmRep);
+            }));
+            SplashScreenManager.CloseForm();
+        }
+        private void xrep06ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SplashScreenManager.ShowForm(typeof(Forms.Main.WaitWindowFrm));
+            this.Invoke(new MethodInvoker(() =>
+            {
+
+                XRep.XRep06 FrmRep = new XRep.XRep06();
+                MCls.ShowPrintPreview(FrmRep);
+            }));
+            SplashScreenManager.CloseForm();
+        }
+        private void qry01ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Qry01 frm = new Qry01() { MdiParent = this };
+            frm.Show();
+        }
         #endregion
 
+        
+
+      
+        
 
     }
 }

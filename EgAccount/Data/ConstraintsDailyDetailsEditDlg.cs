@@ -13,12 +13,18 @@ namespace EgAccount.Data
     public partial class ConstraintsDailyDetailsEditDlg : DevExpress.XtraEditors.XtraForm
     {
         int _id = 0;
-        public ConstraintsDailyDetailsEditDlg(int id)
+        public ConstraintsDailyDetailsEditDlg(int id, bool canEdit)
         {
             InitializeComponent();
             _id = id;
             // TODO: This line of code loads data into the 'dsData.TBLTRAANSDETAILS' table. You can move, or remove it, as needed.
             this.tBLTRAANSDETAILSTableAdapter.FillByTRANSID(this.dsData.TBLTRAANSDETAILS, id);
+            if (canEdit)
+            {
+                lciSave.Enabled = false; btnSave.Visible = false;
+                repositoryItemButtonEditDel.Buttons[0].Enabled = false;
+                gridViewData.OptionsBehavior.ReadOnly = true;
+            }
         }
         private void ConstraintsDailyDetailsEditDlg_Load(object sender, EventArgs e)
         {

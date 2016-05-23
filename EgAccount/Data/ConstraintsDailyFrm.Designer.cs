@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             this.GCGeneralCons = new DevExpress.XtraEditors.GroupControl();
             this.CBRelay = new System.Windows.Forms.CheckBox();
             this.MemoTxtGeneralDes = new DevExpress.XtraEditors.MemoExEdit();
@@ -49,13 +49,18 @@
             this.BtnLoadAccNames = new DevExpress.XtraEditors.SimpleButton();
             this.CBEConsTypes = new DevExpress.XtraEditors.ComboBoxEdit();
             this.BtnAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.TxtAccName = new DevExpress.XtraEditors.TextEdit();
             this.TxtConsValue = new DevExpress.XtraEditors.TextEdit();
             this.TxtBillNumber = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.TxtAccName = new DevExpress.XtraEditors.TreeListLookUpEdit();
+            this.tBLAccountesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsData = new EgAccount.Datasource.dsData();
+            this.treeListLookUpEdit1TreeList = new DevExpress.XtraTreeList.TreeList();
+            this.colAccountId1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colAccountDes2 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.GroupControlDetials = new DevExpress.XtraEditors.GroupControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.LlState = new DevExpress.XtraEditors.LabelControl();
@@ -115,6 +120,11 @@
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.tBL_AccountesTableAdapter = new EgAccount.Datasource.dsDataTableAdapters.TBL_AccountesTableAdapter();
+            this.colAccountTreeId = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colAccountDes = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colAccountId = new DevExpress.XtraTreeList.Columns.TreeListColumn();
+            this.colAccountDes1 = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.GCGeneralCons)).BeginInit();
             this.GCGeneralCons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MemoTxtGeneralDes.Properties)).BeginInit();
@@ -127,9 +137,12 @@
             this.GroupControlAdding.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MemoTxtDes.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CBEConsTypes.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtAccName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtConsValue.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtBillNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtAccName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLAccountesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsData)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupControlDetials)).BeginInit();
             this.GroupControlDetials.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -311,13 +324,13 @@
             this.GroupControlAdding.Controls.Add(this.BtnLoadAccNames);
             this.GroupControlAdding.Controls.Add(this.CBEConsTypes);
             this.GroupControlAdding.Controls.Add(this.BtnAdd);
-            this.GroupControlAdding.Controls.Add(this.TxtAccName);
             this.GroupControlAdding.Controls.Add(this.TxtConsValue);
             this.GroupControlAdding.Controls.Add(this.TxtBillNumber);
             this.GroupControlAdding.Controls.Add(this.labelControl7);
             this.GroupControlAdding.Controls.Add(this.labelControl8);
             this.GroupControlAdding.Controls.Add(this.labelControl9);
             this.GroupControlAdding.Controls.Add(this.labelControl10);
+            this.GroupControlAdding.Controls.Add(this.TxtAccName);
             this.GroupControlAdding.Enabled = false;
             this.GroupControlAdding.Location = new System.Drawing.Point(4, 4);
             this.GroupControlAdding.Name = "GroupControlAdding";
@@ -339,11 +352,12 @@
             // BtnLoadAccNames
             // 
             this.BtnLoadAccNames.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnLoadAccNames.Location = new System.Drawing.Point(164, 57);
+            this.BtnLoadAccNames.Location = new System.Drawing.Point(190, 57);
             this.BtnLoadAccNames.Name = "BtnLoadAccNames";
-            this.BtnLoadAccNames.Size = new System.Drawing.Size(43, 23);
+            this.BtnLoadAccNames.Size = new System.Drawing.Size(17, 23);
             this.BtnLoadAccNames.TabIndex = 8;
             this.BtnLoadAccNames.Text = ". . .";
+            this.BtnLoadAccNames.Visible = false;
             this.BtnLoadAccNames.Click += new System.EventHandler(this.BtnLoadAccNames_Click);
             // 
             // CBEConsTypes
@@ -370,25 +384,18 @@
             this.BtnAdd.Text = "اضـــــــــافه";
             this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
-            // TxtAccName
-            // 
-            this.TxtAccName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TxtAccName.EditValue = "";
-            this.TxtAccName.Location = new System.Drawing.Point(7, 58);
-            this.TxtAccName.Name = "TxtAccName";
-            this.TxtAccName.Properties.NullText = "ادخل اسم الحساب";
-            this.TxtAccName.Properties.NullValuePrompt = "ادخل اسم الحساب";
-            this.TxtAccName.Properties.ReadOnly = true;
-            this.TxtAccName.Size = new System.Drawing.Size(151, 20);
-            this.TxtAccName.TabIndex = 8;
-            this.TxtAccName.TabStop = false;
-            // 
             // TxtConsValue
             // 
             this.TxtConsValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.TxtConsValue.EditValue = "0";
             this.TxtConsValue.Location = new System.Drawing.Point(7, 36);
             this.TxtConsValue.Name = "TxtConsValue";
+            this.TxtConsValue.Properties.DisplayFormat.FormatString = "f";
+            this.TxtConsValue.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.TxtConsValue.Properties.EditFormat.FormatString = "f";
+            this.TxtConsValue.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.TxtConsValue.Properties.Mask.EditMask = "f";
+            this.TxtConsValue.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.TxtConsValue.Properties.NullValuePrompt = "ادخل القيمه";
             this.TxtConsValue.Size = new System.Drawing.Size(109, 20);
             this.TxtConsValue.TabIndex = 7;
@@ -437,6 +444,68 @@
             this.labelControl10.Size = new System.Drawing.Size(40, 13);
             this.labelControl10.TabIndex = 0;
             this.labelControl10.Text = "نوع القيد";
+            // 
+            // TxtAccName
+            // 
+            this.TxtAccName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TxtAccName.EditValue = "";
+            this.TxtAccName.Location = new System.Drawing.Point(7, 58);
+            this.TxtAccName.Name = "TxtAccName";
+            this.TxtAccName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.TxtAccName.Properties.DataSource = this.tBLAccountesBindingSource;
+            this.TxtAccName.Properties.DisplayMember = "AccountDes";
+            this.TxtAccName.Properties.NullText = "ادخل اسم الحساب";
+            this.TxtAccName.Properties.NullValuePrompt = "ادخل اسم الحساب";
+            this.TxtAccName.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.Contains;
+            this.TxtAccName.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.TxtAccName.Properties.TreeList = this.treeListLookUpEdit1TreeList;
+            this.TxtAccName.Properties.ValueMember = "AccountId";
+            this.TxtAccName.Size = new System.Drawing.Size(177, 20);
+            this.TxtAccName.TabIndex = 8;
+            this.TxtAccName.TabStop = false;
+            this.TxtAccName.EditValueChanged += new System.EventHandler(this.TxtAccName_EditValueChanged);
+            // 
+            // tBLAccountesBindingSource
+            // 
+            this.tBLAccountesBindingSource.DataMember = "TBL_Accountes";
+            this.tBLAccountesBindingSource.DataSource = this.dsData;
+            // 
+            // dsData
+            // 
+            this.dsData.DataSetName = "dsData";
+            this.dsData.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // treeListLookUpEdit1TreeList
+            // 
+            this.treeListLookUpEdit1TreeList.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.colAccountId1,
+            this.colAccountDes2});
+            this.treeListLookUpEdit1TreeList.DataSource = this.tBLAccountesBindingSource;
+            this.treeListLookUpEdit1TreeList.Location = new System.Drawing.Point(0, 0);
+            this.treeListLookUpEdit1TreeList.Name = "treeListLookUpEdit1TreeList";
+            this.treeListLookUpEdit1TreeList.OptionsBehavior.AutoPopulateColumns = false;
+            this.treeListLookUpEdit1TreeList.OptionsBehavior.EnableFiltering = true;
+            this.treeListLookUpEdit1TreeList.OptionsView.ShowAutoFilterRow = true;
+            this.treeListLookUpEdit1TreeList.OptionsView.ShowIndentAsRowStyle = true;
+            this.treeListLookUpEdit1TreeList.Size = new System.Drawing.Size(400, 200);
+            this.treeListLookUpEdit1TreeList.TabIndex = 0;
+            // 
+            // colAccountId1
+            // 
+            this.colAccountId1.Caption = "الكود";
+            this.colAccountId1.FieldName = "AccountId";
+            this.colAccountId1.Name = "colAccountId1";
+            this.colAccountId1.Visible = true;
+            this.colAccountId1.VisibleIndex = 0;
+            // 
+            // colAccountDes2
+            // 
+            this.colAccountDes2.Caption = "الاسم";
+            this.colAccountDes2.FieldName = "AccountDes";
+            this.colAccountDes2.Name = "colAccountDes2";
+            this.colAccountDes2.Visible = true;
+            this.colAccountDes2.VisibleIndex = 1;
             // 
             // GroupControlDetials
             // 
@@ -690,6 +759,8 @@
             this.gridColumn21});
             this.gridViewEdit.GridControl = this.gridControlEdit;
             this.gridViewEdit.Name = "gridViewEdit";
+            this.gridViewEdit.OptionsView.ShowAutoFilterRow = true;
+            this.gridViewEdit.OptionsView.ShowGroupPanel = false;
             // 
             // colTRANSID
             // 
@@ -782,7 +853,7 @@
             this.colKIEDDESC.FieldName = "KIEDDESC";
             this.colKIEDDESC.Name = "colKIEDDESC";
             this.colKIEDDESC.Visible = true;
-            this.colKIEDDESC.VisibleIndex = 5;
+            this.colKIEDDESC.VisibleIndex = 4;
             // 
             // coltrhel
             // 
@@ -794,7 +865,7 @@
             this.coltrhel.FieldName = "trhel";
             this.coltrhel.Name = "coltrhel";
             this.coltrhel.Visible = true;
-            this.coltrhel.VisibleIndex = 6;
+            this.coltrhel.VisibleIndex = 5;
             // 
             // gridColumn19
             // 
@@ -812,7 +883,7 @@
             // 
             this.repositoryItemButtonEditEdit.AutoHeight = false;
             this.repositoryItemButtonEditEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::EgAccount.Properties.Resources.apply_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject3, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::EgAccount.Properties.Resources.apply_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, "", null, null, true)});
             this.repositoryItemButtonEditEdit.Name = "repositoryItemButtonEditEdit";
             this.repositoryItemButtonEditEdit.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditEdit.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditEdit_ButtonClick);
@@ -833,7 +904,7 @@
             // 
             this.repositoryItemButtonEditDel.AutoHeight = false;
             this.repositoryItemButtonEditDel.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::EgAccount.Properties.Resources.cancel_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject4, "", null, null, true)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, DevExpress.XtraEditors.ImageLocation.MiddleCenter, global::EgAccount.Properties.Resources.cancel_16x16, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject2, "", null, null, true)});
             this.repositoryItemButtonEditDel.Name = "repositoryItemButtonEditDel";
             this.repositoryItemButtonEditDel.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.repositoryItemButtonEditDel.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.repositoryItemButtonEditDel_ButtonClick);
@@ -1093,6 +1164,46 @@
             this.gridColumn18.Visible = true;
             this.gridColumn18.VisibleIndex = 5;
             // 
+            // tBL_AccountesTableAdapter
+            // 
+            this.tBL_AccountesTableAdapter.ClearBeforeFill = true;
+            // 
+            // colAccountTreeId
+            // 
+            this.colAccountTreeId.Caption = "كود";
+            this.colAccountTreeId.FieldName = "AccountTreeId";
+            this.colAccountTreeId.Name = "colAccountTreeId";
+            this.colAccountTreeId.Visible = true;
+            this.colAccountTreeId.VisibleIndex = 0;
+            this.colAccountTreeId.Width = 77;
+            // 
+            // colAccountDes
+            // 
+            this.colAccountDes.Caption = "اسم";
+            this.colAccountDes.FieldName = "AccountDes";
+            this.colAccountDes.Name = "colAccountDes";
+            this.colAccountDes.Visible = true;
+            this.colAccountDes.VisibleIndex = 1;
+            this.colAccountDes.Width = 77;
+            // 
+            // colAccountId
+            // 
+            this.colAccountId.Caption = "كود";
+            this.colAccountId.FieldName = "AccountId";
+            this.colAccountId.Name = "colAccountId";
+            this.colAccountId.Visible = true;
+            this.colAccountId.VisibleIndex = 0;
+            this.colAccountId.Width = 54;
+            // 
+            // colAccountDes1
+            // 
+            this.colAccountDes1.Caption = "الاسم";
+            this.colAccountDes1.FieldName = "AccountDes";
+            this.colAccountDes1.Name = "colAccountDes1";
+            this.colAccountDes1.Visible = true;
+            this.colAccountDes1.VisibleIndex = 1;
+            this.colAccountDes1.Width = 55;
+            // 
             // ConstraintsDailyFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1116,9 +1227,12 @@
             this.GroupControlAdding.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MemoTxtDes.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CBEConsTypes.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TxtAccName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtConsValue.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TxtBillNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TxtAccName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tBLAccountesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.treeListLookUpEdit1TreeList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GroupControlDetials)).EndInit();
             this.GroupControlDetials.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
@@ -1188,7 +1302,6 @@
         private DevExpress.XtraEditors.SimpleButton BtnSave;
         private DevExpress.XtraEditors.ComboBoxEdit CBEConsTypes;
         private DevExpress.XtraEditors.SimpleButton BtnLoadAccNames;
-        private DevExpress.XtraEditors.TextEdit TxtAccName;
         private DevExpress.XtraEditors.MemoExEdit MemoTxtGeneralDes;
         private DevExpress.XtraEditors.MemoExEdit MemoTxtDes;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
@@ -1241,5 +1354,16 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEditDMY;
         private DevExpress.Data.Linq.LinqServerModeSource LSMSCDYeras;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditYearID;
+        private DevExpress.XtraEditors.TreeListLookUpEdit TxtAccName;
+        private DevExpress.XtraTreeList.TreeList treeListLookUpEdit1TreeList;
+        private Datasource.dsData dsData;
+        private System.Windows.Forms.BindingSource tBLAccountesBindingSource;
+        private Datasource.dsDataTableAdapters.TBL_AccountesTableAdapter tBL_AccountesTableAdapter;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colAccountTreeId;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colAccountDes;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colAccountId;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colAccountDes1;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colAccountId1;
+        private DevExpress.XtraTreeList.Columns.TreeListColumn colAccountDes2;
     }
 }

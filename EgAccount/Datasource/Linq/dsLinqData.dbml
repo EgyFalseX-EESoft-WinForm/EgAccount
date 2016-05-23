@@ -154,4 +154,27 @@
       <Column Name="kaznatype" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
+  <Table Name="dbo.vTBLTRAANSDETAILS" Member="vTBLTRAANSDETAILs">
+    <Type Name="vTBLTRAANSDETAIL">
+      <Column Name="TRANSID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="YearID" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="YearName" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="KIEDDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KIEDDESC" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="AccountId" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Madeen" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Daien" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="kieddes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AccountDes" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="AccNatueName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="MostandNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TNO" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="KIEDNO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KIEDDAFTRYNO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="trhel" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="userin" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="datein" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

@@ -47,6 +47,7 @@
             this.TLAccNames.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.treeListColumn1,
             this.treeListColumn2});
+            this.TLAccNames.Cursor = System.Windows.Forms.Cursors.Default;
             this.TLAccNames.Location = new System.Drawing.Point(8, 3);
             this.TLAccNames.Name = "TLAccNames";
             this.TLAccNames.BeginUnboundLoad();
@@ -54,10 +55,10 @@
             "شجرة الحسابات",
             "0"}, -1, 0, 1, -1);
             this.TLAccNames.EndUnboundLoad();
-            this.TLAccNames.OptionsBehavior.Editable = false;
             this.TLAccNames.OptionsBehavior.PopulateServiceColumns = true;
             this.TLAccNames.OptionsLayout.AddNewColumns = false;
             this.TLAccNames.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.TLAccNames.OptionsView.ShowAutoFilterRow = true;
             this.TLAccNames.SelectImageList = this.imageCollectionNodes;
             this.TLAccNames.Size = new System.Drawing.Size(272, 220);
             this.TLAccNames.TabIndex = 0;
@@ -68,16 +69,18 @@
             // 
             this.treeListColumn1.Caption = "اسم الحساب";
             this.treeListColumn1.FieldName = "AccountDes";
-            this.treeListColumn1.MinWidth = 51;
+            this.treeListColumn1.MinWidth = 52;
             this.treeListColumn1.Name = "treeListColumn1";
             this.treeListColumn1.Visible = true;
             this.treeListColumn1.VisibleIndex = 0;
             // 
             // treeListColumn2
             // 
-            this.treeListColumn2.Caption = "AccountId";
+            this.treeListColumn2.Caption = "كود";
             this.treeListColumn2.FieldName = "AccountId";
             this.treeListColumn2.Name = "treeListColumn2";
+            this.treeListColumn2.Visible = true;
+            this.treeListColumn2.VisibleIndex = 1;
             // 
             // imageCollectionNodes
             // 

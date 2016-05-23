@@ -61,6 +61,8 @@ namespace EgAccount
         }
         private void ConstraintsDailyFrm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'dsData.TBL_Accountes' table. You can move, or remove it, as needed.
+            this.tBL_AccountesTableAdapter.Fill(this.dsData.TBL_Accountes);
             
             LoadDefaultData();
             LoadAllCons();
@@ -86,6 +88,9 @@ namespace EgAccount
             LUEYear.Properties.DataSource = YearsTbl;
             LUEYear.Properties.DisplayMember = "YearName";
             LUEYear.Properties.ValueMember = "YearID";
+            DataTable dtMax = MCls.LoadDataTable("SELECT MAX(YearID) FROM CDYeras");
+            if (dtMax.Rows.Count > 0)
+                LUEYear.EditValue = dtMax.Rows[0][0];
         }
         private void CalcCons()
         {
@@ -144,18 +149,22 @@ namespace EgAccount
                 TxtAccName.Tag = AccWin.AccountID;
             }
         }
+        private void TxtAccName_EditValueChanged(object sender, EventArgs e)
+        {
+            TxtAccName.Tag = TxtAccName.EditValue;
+        }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             DataRow row = ConsDetials.NewRow();
             if (CBEConsTypes.SelectedIndex == 0)
             {
-                row["Madeen"] = MCls.ConvertStringToInt(TxtConsValue.Text.Trim());
+                row["Madeen"] = Convert.ToDecimal(TxtConsValue.Text.Trim());
                 row["Daien"] = "0";
             }
             else
             {
                 row["Madeen"] = "0";
-                row["Daien"] = MCls.ConvertStringToInt(TxtConsValue.Text.Trim());
+                row["Daien"] = Convert.ToDecimal(TxtConsValue.Text.Trim());
             }
             row["AccountName"] = TxtAccName.Text.ToString();
             row["Accountid"] = TxtAccName.Tag.ToString();
@@ -311,7 +320,7 @@ namespace EgAccount
         private void repositoryItemButtonEditDetails_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             DevExpress.Xpo.Metadata.XPDataTableObject row = (DevExpress.Xpo.Metadata.XPDataTableObject)gridViewEdit.GetRow(gridViewEdit.FocusedRowHandle);
-            Data.ConstraintsDailyDetailsEditDlg dlg = new Data.ConstraintsDailyDetailsEditDlg(Convert.ToInt32(row.GetMemberValue("TRANSID")));
+            Data.ConstraintsDailyDetailsEditDlg dlg = new Data.ConstraintsDailyDetailsEditDlg(Convert.ToInt32(row.GetMemberValue("TRANSID")), Convert.ToBoolean(row.GetMemberValue("trhel")));
             if (dlg.ShowDialog() == DialogResult.OK)
             {
                 MessageBox.Show("تم تعديل تفاصيل القيد", " تم التعديل", MessageBoxButtons.OK,  MessageBoxIcon.Information);
@@ -327,5 +336,7 @@ namespace EgAccount
                 ReloadEditGrid();
             }
         }
+
+        
     }
 }

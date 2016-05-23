@@ -2093,7 +2093,7 @@ namespace EgAccount.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public TBL_AccountesRow AddTBL_AccountesRow(int AccountId, int AccountTreeId, int PairantAccount, string AccountDes, byte KhtamiaccID, bool aznsarf, byte AccNatueID) {
+            public TBL_AccountesRow AddTBL_AccountesRow(int AccountId, long AccountTreeId, int PairantAccount, string AccountDes, byte KhtamiaccID, bool aznsarf, byte AccNatueID) {
                 TBL_AccountesRow rowTBL_AccountesRow = ((TBL_AccountesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         AccountId,
@@ -2146,7 +2146,7 @@ namespace EgAccount.Datasource {
             private void InitClass() {
                 this.columnAccountId = new global::System.Data.DataColumn("AccountId", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAccountId);
-                this.columnAccountTreeId = new global::System.Data.DataColumn("AccountTreeId", typeof(int), null, global::System.Data.MappingType.Element);
+                this.columnAccountTreeId = new global::System.Data.DataColumn("AccountTreeId", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAccountTreeId);
                 this.columnPairantAccount = new global::System.Data.DataColumn("PairantAccount", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPairantAccount);
@@ -5540,9 +5540,9 @@ namespace EgAccount.Datasource {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int AccountTreeId {
+            public long AccountTreeId {
                 get {
-                    return ((int)(this[this.tableTBL_Accountes.AccountTreeIdColumn]));
+                    return ((long)(this[this.tableTBL_Accountes.AccountTreeIdColumn]));
                 }
                 set {
                     this[this.tableTBL_Accountes.AccountTreeIdColumn] = value;

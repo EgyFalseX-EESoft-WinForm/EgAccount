@@ -14,6 +14,8 @@ namespace EgAccount
         [STAThread]
         static void Main()
         {
+            //MessageBox.Show(MCls.DecimalToWords(Convert.ToDecimal(3970)));
+            //return;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             DevExpress.Skins.SkinManager.EnableFormSkins();
