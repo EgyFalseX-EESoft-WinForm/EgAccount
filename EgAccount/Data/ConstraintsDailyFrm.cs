@@ -125,7 +125,7 @@ namespace EgAccount
         {
             if (TxtGeneralConstraintNo.Text.Trim().Length == 0 || LUEYear.ItemIndex == -1)
             {
-                MessageBox.Show("يجب ادخال رقم القيد و كود السنه", "معلومات غير كامله", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("يجب ادخال رقم الاذن و كود السنه", "معلومات غير كامله", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             TxtBillNumber.Text = TxtGeneralBillNumber.Text.Trim();
@@ -206,7 +206,7 @@ namespace EgAccount
                     Cmd.ExecuteNonQuery();
                 }
                 else
-                    MessageBox.Show("يجب ادخال قيود قبل الحفظ","بيانات غير كامله",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                    MessageBox.Show("يجب ادخال التفاصيل قبل الحفظ","بيانات غير كامله",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 int TNO = 0;
                 foreach (DataRow row in ConsDetials.Rows)
                 {
@@ -226,7 +226,7 @@ namespace EgAccount
                     Cmd.ExecuteNonQuery();
                 }
                 Trn.Commit();
-                MessageBox.Show("تم حفـــظ القيــد", "تمت العمليه", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("تم حفـــظ الاذن", "تمت العمليه", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 
                 ClearForm();
                 LUEYear.Focus();
@@ -274,7 +274,7 @@ namespace EgAccount
                 Trn.Commit();
                 LoadAllCons();
                 LUEDelCons_EditValueChanged(LUEDelCons, new EventArgs());
-                MessageBox.Show("تم حذف القيــــد","تمت العمليه",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("تم حذف الاذن","تمت العمليه",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             catch (SqlException ex)
             {
@@ -290,7 +290,7 @@ namespace EgAccount
             bool tarhel = (bool)MCls.adpQ.GetTarhelByTRANSID(Convert.ToInt32(row.GetMemberValue("TRANSID")));
             if (tarhel == true)
             {
-                MessageBox.Show("لا يمكن تعديل قيد تم ترحيلة", "لا يمكن التعديل", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("لا يمكن تعديل اذن تم ترحيلة", "لا يمكن التعديل", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (MessageBox.Show("هل انت متأكد؟", "تحزير", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
@@ -307,7 +307,7 @@ namespace EgAccount
             bool tarhel = (bool)MCls.adpQ.GetTarhelByTRANSID(Convert.ToInt32(row.GetMemberValue("TRANSID")));
             if (tarhel == true)
             {
-                MessageBox.Show("لا يمكن تعديل قيد تم ترحيلة", "لا يمكن التعديل", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("لا يمكن تعديل اذن تم ترحيلة", "لا يمكن التعديل", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             if (MessageBox.Show("هل انت متأكد؟", "تحزير", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
@@ -323,7 +323,7 @@ namespace EgAccount
             Data.ConstraintsDailyDetailsEditDlg dlg = new Data.ConstraintsDailyDetailsEditDlg(Convert.ToInt32(row.GetMemberValue("TRANSID")), Convert.ToBoolean(row.GetMemberValue("trhel")));
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("تم تعديل تفاصيل القيد", " تم التعديل", MessageBoxButtons.OK,  MessageBoxIcon.Information);
+                MessageBox.Show("تم تعديل تفاصيل الاذن", " تم التعديل", MessageBoxButtons.OK,  MessageBoxIcon.Information);
                 return;
             }
 
@@ -337,6 +337,9 @@ namespace EgAccount
             }
         }
 
-        
+        private void repositoryItemButtonEditPrint_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+
+        }
     }
 }

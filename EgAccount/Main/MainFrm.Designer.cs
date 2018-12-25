@@ -46,7 +46,6 @@
             this.dataAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.accountsTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.constraintsDailyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tbleznsarsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tblraseedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tbleznsars2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tBLkaznaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,6 +59,7 @@
             this.xrep03ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xrep04ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xrep05ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.xrep06ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.permissionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prmEditorRoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.prmEditorRoleMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -85,7 +85,6 @@
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.imageListIcon = new System.Windows.Forms.ImageList(this.components);
-            this.xrep06ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -229,20 +228,19 @@
             this.dataAccountToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.accountsTypesToolStripMenuItem,
             this.constraintsDailyToolStripMenuItem,
-            this.tbleznsarsToolStripMenuItem,
             this.tblraseedToolStripMenuItem,
             this.tbleznsars2ToolStripMenuItem,
             this.tBLkaznaToolStripMenuItem});
             this.dataAccountToolStripMenuItem.Image = global::EgAccount.Properties.Resources.banks;
             this.dataAccountToolStripMenuItem.Name = "dataAccountToolStripMenuItem";
-            this.dataAccountToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.dataAccountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dataAccountToolStripMenuItem.Text = "بيانات الحسابات";
             // 
             // accountsTypesToolStripMenuItem
             // 
             this.accountsTypesToolStripMenuItem.Image = global::EgAccount.Properties.Resources.accountsTypes;
             this.accountsTypesToolStripMenuItem.Name = "accountsTypesToolStripMenuItem";
-            this.accountsTypesToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.accountsTypesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.accountsTypesToolStripMenuItem.Text = "دليل الحسابات";
             this.accountsTypesToolStripMenuItem.Visible = false;
             this.accountsTypesToolStripMenuItem.Click += new System.EventHandler(this.accountsTypesToolStripMenuItem_Click);
@@ -251,24 +249,16 @@
             // 
             this.constraintsDailyToolStripMenuItem.Image = global::EgAccount.Properties.Resources.constraintsDaily;
             this.constraintsDailyToolStripMenuItem.Name = "constraintsDailyToolStripMenuItem";
-            this.constraintsDailyToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
-            this.constraintsDailyToolStripMenuItem.Text = "القيود اليوميــه";
+            this.constraintsDailyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.constraintsDailyToolStripMenuItem.Text = "اذون الصرف";
             this.constraintsDailyToolStripMenuItem.Visible = false;
             this.constraintsDailyToolStripMenuItem.Click += new System.EventHandler(this.constraintsDailyToolStripMenuItem_Click);
-            // 
-            // tbleznsarsToolStripMenuItem
-            // 
-            this.tbleznsarsToolStripMenuItem.Image = global::EgAccount.Properties.Resources.tbleznsars16;
-            this.tbleznsarsToolStripMenuItem.Name = "tbleznsarsToolStripMenuItem";
-            this.tbleznsarsToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
-            this.tbleznsarsToolStripMenuItem.Text = "اذن الصرف";
-            this.tbleznsarsToolStripMenuItem.Click += new System.EventHandler(this.tbleznsarsToolStripMenuItem_Click);
             // 
             // tblraseedToolStripMenuItem
             // 
             this.tblraseedToolStripMenuItem.Image = global::EgAccount.Properties.Resources.tblraseed16;
             this.tblraseedToolStripMenuItem.Name = "tblraseedToolStripMenuItem";
-            this.tblraseedToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.tblraseedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tblraseedToolStripMenuItem.Text = "رصيد افتتاحي";
             this.tblraseedToolStripMenuItem.Click += new System.EventHandler(this.tblraseedToolStripMenuItem_Click);
             // 
@@ -276,7 +266,7 @@
             // 
             this.tbleznsars2ToolStripMenuItem.Image = global::EgAccount.Properties.Resources.tbleznsars216;
             this.tbleznsars2ToolStripMenuItem.Name = "tbleznsars2ToolStripMenuItem";
-            this.tbleznsars2ToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.tbleznsars2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tbleznsars2ToolStripMenuItem.Text = "تسليم الشيكات";
             this.tbleznsars2ToolStripMenuItem.Click += new System.EventHandler(this.tbleznsars2ToolStripMenuItem_Click);
             // 
@@ -284,7 +274,7 @@
             // 
             this.tBLkaznaToolStripMenuItem.Image = global::EgAccount.Properties.Resources.TBLkazna16;
             this.tBLkaznaToolStripMenuItem.Name = "tBLkaznaToolStripMenuItem";
-            this.tBLkaznaToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.tBLkaznaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tBLkaznaToolStripMenuItem.Text = "حركة الخزينة";
             this.tBLkaznaToolStripMenuItem.Click += new System.EventHandler(this.tBLkaznaToolStripMenuItem_Click);
             // 
@@ -295,7 +285,7 @@
             this.tBLCheekNumbersToolStripMenuItem});
             this.dataGeneralToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Code;
             this.dataGeneralToolStripMenuItem.Name = "dataGeneralToolStripMenuItem";
-            this.dataGeneralToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.dataGeneralToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dataGeneralToolStripMenuItem.Text = "بيانات عامه";
             // 
             // editEmpToolStripMenuItem
@@ -349,7 +339,7 @@
             // 
             this.xrep01ToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Report;
             this.xrep01ToolStripMenuItem.Name = "xrep01ToolStripMenuItem";
-            this.xrep01ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xrep01ToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.xrep01ToolStripMenuItem.Text = "حركة حساب";
             this.xrep01ToolStripMenuItem.Click += new System.EventHandler(this.xrep01ToolStripMenuItem_Click);
             // 
@@ -357,7 +347,7 @@
             // 
             this.xrep03ToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Report;
             this.xrep03ToolStripMenuItem.Name = "xrep03ToolStripMenuItem";
-            this.xrep03ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xrep03ToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.xrep03ToolStripMenuItem.Text = "ميزان المراجعة";
             this.xrep03ToolStripMenuItem.Click += new System.EventHandler(this.xrep03ToolStripMenuItem_Click);
             // 
@@ -365,7 +355,7 @@
             // 
             this.xrep04ToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Report;
             this.xrep04ToolStripMenuItem.Name = "xrep04ToolStripMenuItem";
-            this.xrep04ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xrep04ToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.xrep04ToolStripMenuItem.Text = "قيد محاسبي";
             this.xrep04ToolStripMenuItem.Click += new System.EventHandler(this.xrep04ToolStripMenuItem_Click);
             // 
@@ -373,9 +363,17 @@
             // 
             this.xrep05ToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Report;
             this.xrep05ToolStripMenuItem.Name = "xrep05ToolStripMenuItem";
-            this.xrep05ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xrep05ToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.xrep05ToolStripMenuItem.Text = "اذون الصرف";
             this.xrep05ToolStripMenuItem.Click += new System.EventHandler(this.xrep05ToolStripMenuItem_Click);
+            // 
+            // xrep06ToolStripMenuItem
+            // 
+            this.xrep06ToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Report;
+            this.xrep06ToolStripMenuItem.Name = "xrep06ToolStripMenuItem";
+            this.xrep06ToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.xrep06ToolStripMenuItem.Text = "القيود اليومية";
+            this.xrep06ToolStripMenuItem.Click += new System.EventHandler(this.xrep06ToolStripMenuItem_Click);
             // 
             // permissionToolStripMenuItem
             // 
@@ -593,14 +591,6 @@
             this.imageListIcon.ImageSize = new System.Drawing.Size(32, 32);
             this.imageListIcon.TransparentColor = System.Drawing.Color.Transparent;
             // 
-            // xrep06ToolStripMenuItem
-            // 
-            this.xrep06ToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Report;
-            this.xrep06ToolStripMenuItem.Name = "xrep06ToolStripMenuItem";
-            this.xrep06ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.xrep06ToolStripMenuItem.Text = "القيود اليومية";
-            this.xrep06ToolStripMenuItem.Click += new System.EventHandler(this.xrep06ToolStripMenuItem_Click);
-            // 
             // MainFrm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -674,7 +664,6 @@
         private System.Windows.Forms.ToolStripMenuItem skinsToolStripMenuItem;
         private System.Windows.Forms.ImageList imageListIcon;
         private System.Windows.Forms.ToolStripMenuItem tBLCheekNumbersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tbleznsarsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xrep01ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tblraseedToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem xrep03ToolStripMenuItem;

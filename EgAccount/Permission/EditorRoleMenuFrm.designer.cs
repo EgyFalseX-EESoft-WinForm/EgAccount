@@ -134,7 +134,7 @@
             this.helpMenu});
             this.menuStrip.Location = new System.Drawing.Point(0, 59);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(110, 215);
+            this.menuStrip.Size = new System.Drawing.Size(126, 215);
             this.menuStrip.TabIndex = 3;
             this.menuStrip.Text = "GeneralmenuStrip";
             // 
@@ -145,7 +145,7 @@
             this.fileMenu.Image = global::EgAccount.Properties.Resources.File;
             this.fileMenu.ImageTransparentColor = System.Drawing.SystemColors.ActiveBorder;
             this.fileMenu.Name = "fileMenu";
-            this.fileMenu.Size = new System.Drawing.Size(97, 20);
+            this.fileMenu.Size = new System.Drawing.Size(113, 20);
             this.fileMenu.Text = "ملـــف";
             // 
             // restConnectionToolStripMenuItem
@@ -165,7 +165,7 @@
             this.generalCodesToolStripMenuItem});
             this.CodeMenu.Image = global::EgAccount.Properties.Resources.Code;
             this.CodeMenu.Name = "CodeMenu";
-            this.CodeMenu.Size = new System.Drawing.Size(97, 20);
+            this.CodeMenu.Size = new System.Drawing.Size(113, 20);
             this.CodeMenu.Text = "اكواد";
             // 
             // storeCodesToolStripMenuItem
@@ -178,7 +178,7 @@
             this.billPayTypeToolStripMenuItem});
             this.storeCodesToolStripMenuItem.Image = global::EgAccount.Properties.Resources.editorStore;
             this.storeCodesToolStripMenuItem.Name = "storeCodesToolStripMenuItem";
-            this.storeCodesToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.storeCodesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.storeCodesToolStripMenuItem.Text = "اكواد المخازن";
             // 
             // EditorsalesUnitToolStripMenuItem
@@ -186,7 +186,7 @@
             this.EditorsalesUnitToolStripMenuItem.CheckOnClick = true;
             this.EditorsalesUnitToolStripMenuItem.Image = global::EgAccount.Properties.Resources.EditorsalesUnit;
             this.EditorsalesUnitToolStripMenuItem.Name = "EditorsalesUnitToolStripMenuItem";
-            this.EditorsalesUnitToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.EditorsalesUnitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.EditorsalesUnitToolStripMenuItem.Text = "الوحـــــــدات";
             this.EditorsalesUnitToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -195,7 +195,7 @@
             this.editorStoreToolStripMenuItem.CheckOnClick = true;
             this.editorStoreToolStripMenuItem.Image = global::EgAccount.Properties.Resources.editorStore;
             this.editorStoreToolStripMenuItem.Name = "editorStoreToolStripMenuItem";
-            this.editorStoreToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.editorStoreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editorStoreToolStripMenuItem.Text = "المخـازن";
             this.editorStoreToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -204,7 +204,7 @@
             this.editorCDCategoriesToolStripMenuItem.CheckOnClick = true;
             this.editorCDCategoriesToolStripMenuItem.Image = global::EgAccount.Properties.Resources.editorCDCategories;
             this.editorCDCategoriesToolStripMenuItem.Name = "editorCDCategoriesToolStripMenuItem";
-            this.editorCDCategoriesToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.editorCDCategoriesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editorCDCategoriesToolStripMenuItem.Text = "فئــات الاصناف";
             this.editorCDCategoriesToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -213,7 +213,7 @@
             this.EditorCompaniesToolStripMenuItem.CheckOnClick = true;
             this.EditorCompaniesToolStripMenuItem.Image = global::EgAccount.Properties.Resources.EditorCompanies;
             this.EditorCompaniesToolStripMenuItem.Name = "EditorCompaniesToolStripMenuItem";
-            this.EditorCompaniesToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.EditorCompaniesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.EditorCompaniesToolStripMenuItem.Text = "الشركات المنتجــه";
             this.EditorCompaniesToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -222,7 +222,7 @@
             this.billPayTypeToolStripMenuItem.CheckOnClick = true;
             this.billPayTypeToolStripMenuItem.Image = global::EgAccount.Properties.Resources.billPayType;
             this.billPayTypeToolStripMenuItem.Name = "billPayTypeToolStripMenuItem";
-            this.billPayTypeToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.billPayTypeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.billPayTypeToolStripMenuItem.Text = "طرق الدفع";
             this.billPayTypeToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -235,7 +235,7 @@
             this.accTreeOptionsFrmToolStripMenuItem});
             this.accountCodesToolStripMenuItem.Image = global::EgAccount.Properties.Resources.banks;
             this.accountCodesToolStripMenuItem.Name = "accountCodesToolStripMenuItem";
-            this.accountCodesToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.accountCodesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.accountCodesToolStripMenuItem.Text = "اكواد الحسابات";
             // 
             // editorYearToolStripMenuItem
@@ -280,7 +280,7 @@
             this.editJobToolStripMenuItem});
             this.generalCodesToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Code;
             this.generalCodesToolStripMenuItem.Name = "generalCodesToolStripMenuItem";
-            this.generalCodesToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.generalCodesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.generalCodesToolStripMenuItem.Text = "اكواد عامه";
             // 
             // editJobToolStripMenuItem
@@ -288,7 +288,7 @@
             this.editJobToolStripMenuItem.CheckOnClick = true;
             this.editJobToolStripMenuItem.Image = global::EgAccount.Properties.Resources.editJobTool;
             this.editJobToolStripMenuItem.Name = "editJobToolStripMenuItem";
-            this.editJobToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.editJobToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editJobToolStripMenuItem.Text = "الوظائف";
             this.editJobToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -300,7 +300,7 @@
             this.dataGeneralToolStripMenuItem});
             this.dataToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Data;
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
-            this.dataToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.dataToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
             this.dataToolStripMenuItem.Text = "ادخال بيانات";
             // 
             // dataStoreToolStripMenuItem
@@ -314,7 +314,7 @@
             this.DataSellBillBarCodeFrmToolStripMenuItem});
             this.dataStoreToolStripMenuItem.Image = global::EgAccount.Properties.Resources.editorStore;
             this.dataStoreToolStripMenuItem.Name = "dataStoreToolStripMenuItem";
-            this.dataStoreToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.dataStoreToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dataStoreToolStripMenuItem.Text = "بيانات المخازن";
             // 
             // editorCustomerToolStripMenuItem
@@ -378,7 +378,7 @@
             this.constraintsDailyToolStripMenuItem});
             this.dataAccountToolStripMenuItem.Image = global::EgAccount.Properties.Resources.banks;
             this.dataAccountToolStripMenuItem.Name = "dataAccountToolStripMenuItem";
-            this.dataAccountToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.dataAccountToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dataAccountToolStripMenuItem.Text = "بيانات الحسابات";
             // 
             // accountsTypesToolStripMenuItem
@@ -386,7 +386,7 @@
             this.accountsTypesToolStripMenuItem.CheckOnClick = true;
             this.accountsTypesToolStripMenuItem.Image = global::EgAccount.Properties.Resources.accountsTypes;
             this.accountsTypesToolStripMenuItem.Name = "accountsTypesToolStripMenuItem";
-            this.accountsTypesToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
+            this.accountsTypesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.accountsTypesToolStripMenuItem.Text = "دليل الحسابات";
             this.accountsTypesToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -395,8 +395,8 @@
             this.constraintsDailyToolStripMenuItem.CheckOnClick = true;
             this.constraintsDailyToolStripMenuItem.Image = global::EgAccount.Properties.Resources.constraintsDaily;
             this.constraintsDailyToolStripMenuItem.Name = "constraintsDailyToolStripMenuItem";
-            this.constraintsDailyToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
-            this.constraintsDailyToolStripMenuItem.Text = "القيود اليوميــه";
+            this.constraintsDailyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.constraintsDailyToolStripMenuItem.Text = "اذون الصرف";
             this.constraintsDailyToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
             // dataGeneralToolStripMenuItem
@@ -405,7 +405,7 @@
             this.editEmpToolStripMenuItem});
             this.dataGeneralToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Code;
             this.dataGeneralToolStripMenuItem.Name = "dataGeneralToolStripMenuItem";
-            this.dataGeneralToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.dataGeneralToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dataGeneralToolStripMenuItem.Text = "بيانات عامه";
             // 
             // editEmpToolStripMenuItem
@@ -423,7 +423,7 @@
             this.qry01ToolStripMenuItem});
             this.queryToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Queries;
             this.queryToolStripMenuItem.Name = "queryToolStripMenuItem";
-            this.queryToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.queryToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
             this.queryToolStripMenuItem.Text = "استعلامــات";
             // 
             // qry01ToolStripMenuItem
@@ -431,7 +431,7 @@
             this.qry01ToolStripMenuItem.CheckOnClick = true;
             this.qry01ToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Qry;
             this.qry01ToolStripMenuItem.Name = "qry01ToolStripMenuItem";
-            this.qry01ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.qry01ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.qry01ToolStripMenuItem.Text = "القيود";
             this.qry01ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -443,7 +443,7 @@
             this.xrep04ToolStripMenuItem});
             this.printingToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Print1;
             this.printingToolStripMenuItem.Name = "printingToolStripMenuItem";
-            this.printingToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.printingToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
             this.printingToolStripMenuItem.Text = "طبــاعة تقاريــر";
             // 
             // xrep01ToolStripMenuItem
@@ -451,7 +451,7 @@
             this.xrep01ToolStripMenuItem.CheckOnClick = true;
             this.xrep01ToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Report;
             this.xrep01ToolStripMenuItem.Name = "xrep01ToolStripMenuItem";
-            this.xrep01ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xrep01ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.xrep01ToolStripMenuItem.Text = "حركة حساب";
             this.xrep01ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -460,7 +460,7 @@
             this.xrep03ToolStripMenuItem.CheckOnClick = true;
             this.xrep03ToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Report;
             this.xrep03ToolStripMenuItem.Name = "xrep03ToolStripMenuItem";
-            this.xrep03ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xrep03ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.xrep03ToolStripMenuItem.Text = "ميزان المراجعة";
             this.xrep03ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -469,7 +469,7 @@
             this.xrep04ToolStripMenuItem.CheckOnClick = true;
             this.xrep04ToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Report;
             this.xrep04ToolStripMenuItem.Name = "xrep04ToolStripMenuItem";
-            this.xrep04ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.xrep04ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.xrep04ToolStripMenuItem.Text = "قيد محاسبي";
             this.xrep04ToolStripMenuItem.Click += new System.EventHandler(this.ToolStripMenuItem_Click);
             // 
@@ -482,7 +482,7 @@
             this.premEditorUserInRoleToolStripMenuItem});
             this.permissionToolStripMenuItem.Image = global::EgAccount.Properties.Resources.Permission;
             this.permissionToolStripMenuItem.Name = "permissionToolStripMenuItem";
-            this.permissionToolStripMenuItem.Size = new System.Drawing.Size(97, 20);
+            this.permissionToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
             this.permissionToolStripMenuItem.Text = "صلاحيــــات";
             // 
             // prmEditorRoleToolStripMenuItem
@@ -528,7 +528,7 @@
             this.skinsToolStripMenuItem});
             this.toolsMenu.Image = global::EgAccount.Properties.Resources.Tools;
             this.toolsMenu.Name = "toolsMenu";
-            this.toolsMenu.Size = new System.Drawing.Size(97, 20);
+            this.toolsMenu.Size = new System.Drawing.Size(113, 20);
             this.toolsMenu.Text = "ادوات";
             // 
             // optionsToolStripMenuItem
@@ -558,7 +558,7 @@
             this.aboutToolStripMenuItem});
             this.helpMenu.Image = global::EgAccount.Properties.Resources.Help;
             this.helpMenu.Name = "helpMenu";
-            this.helpMenu.Size = new System.Drawing.Size(97, 20);
+            this.helpMenu.Size = new System.Drawing.Size(113, 20);
             this.helpMenu.Text = "مساعده";
             // 
             // contentsToolStripMenuItem
